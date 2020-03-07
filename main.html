@@ -10,37 +10,92 @@
     <title>TaskManager</title>
 </head>
 <body>
-    <article class=wrapper>
-        <section class = frontPage>
-            <heading id=mainHeading>
-                <button id='loginBtn' onmouseover = 'btnHover(this)' onmouseout = 'btnUnhover(this)'>
-                    Log in
+    <article id=wrapper>
+        <heading id=navBar>
+            <div id=icon></div>
+            <div id=barMask></div>
+            <button id='loginBtn' onmouseover = 'btnHover(this)' onmouseout = 'btnUnhover(this)'>
+                Log in
+            </button>
+            <button id="signupBtn" onmouseover = 'btnHover(this)' onmouseout = 'btnUnhover(this)'>
+                Sign up
+            </button>
+            <div id=searchBar>
+                <input id = 'searchInput' type="text" placeholder="  Search">
+                <div onmouseover = 'btnHover(this)' onmouseout = 'btnUnhover(this)'
+                    onclick = 'changeStatus(document.getElementById("searchInput"), "inline-block")'>
+                    <img id=searchBtn src="bgImage/searchIcon.svg" alt="x">
+                </div>
+            </div>
+        </heading>
+        <section id = main onclick = 'changeStatus(document.getElementById("searchInput"), "none")'>
+            <section id = frontPage>
+                <div class="centerTitle">
+                    <div id=title>Task Manager</div>
+                </div>
+                <div id=briefIntro>
+                    A creative and open warehouse with streams of visions</div>
+                </div>
+                <div id="movingDot"></div>
+            </section>
+            <section id = 'introduction'>
+                <div id= introWords>
+                    A place for dream chasers, a platform for visionary planners, a driving force for bold advancers, XXX is home for the new generation of future-planning. With our dynamic progress bars and unique sharing features, one can fully immerse in setting their goals, keeping track of their progress, and learning from the experience of others.
+                </div>
+            </section>
+            <section id = 'features'></section>
+            <div id = FeatureTitle>Why XXX?</div>
+            <div class = feature id=feature1
+                 onmouseover = 'displayBlock(this, 0, -1)'
+                 onmouseout = 'displayBlock(this, 0, 1)'>
+                 <div class = featureBG id=featureBG1></div>
+                 <p class = featureP>
+                    Future Planner
+                     <br>
+                     Allowing users to plan out their future path with ease.
+                 </p>
+            </div>
+            <div class = feature id=feature2
+                 onmouseover = 'displayBlock(this, 1, -1)'
+                 onmouseout = 'displayBlock(this, 1, 1)'>
+                 <div class = featureBG id=featureBG2></div>
+                 <p class = featureP>
+                    Standing on shoulder of giants
+                    <br>
+                    Learning from others’ wisdom, users are allowed to search others’ plan
+                </p>
+            </div>
+            <div class = feature id=feature3
+                 onmouseover = 'displayBlock(this, 2, -1)'
+                 onmouseout = 'displayBlock(this, 2, 1)'>
+                <div class = featureBG id=featureBG3></div>
+                <p class = featureP>
+                    Decision is fun
+                    <br>
+                    Utilizing cutting-edge web technology, makes planning no longer a tedious task.
+                </p>
+            </div>
+            <div class = feature id=feature4
+                 onmouseover = 'displayBlock(this, 3, -1)'
+                 onmouseout = 'displayBlock(this, 3, 1)'>
+                <div class = featureBG id=featureBG4></div>
+                <p class = featureP>
+                    Better than just to-do
+                    <br>
+                    Conveniently make future decisions and visualize your progress
+                </p>
+            </div>
+            <section id = conclusion>
+            </section>
+            <footer id = 'footer'>
+                <div>
+                    The future belongs to those who believe in the beauty of their dreams. Make it reality with XXX.
+                </div>
+                <button id="btmSignupBtn" onmouseover = 'btnHover(this)' onmouseout = 'btnUnhover(this)'>
+                    Sign Up Now
                 </button>
-                <button id="signupBtn" onmouseover = 'btnHover(this)' onmouseout = 'btnUnhover(this)'>
-                    Sign up
-                </button>
-            </heading>
-            <div class="centerTitle">
-                <div id=title>Task Manager</div>
-            </div>
-            <div id=briefIntro>
-                A creative and open warehouse with streams of visions</div>
-            </div>
-            <div id="movingDot"></div>
+            </footer>
         </section>
-        <section class = 'introduction'>
-            <div id= introWords>
-                A place for dream chasers, a platform for visionary planners, a driving force for bold advancers, XXX is home for the new generation of future-planning. With our dynamic progress bars and unique sharing features, one can fully immerse in setting their goals, keeping track of their progress, and learning from the experience of others.
-            </div>
-        </section>
-        <section class = 'features'>
-
-        </section>
-        <section class = conclusion>
-
-        </section>
-        <footer class = 'footer'>
-        </footer>
     </article>
 </body>
 </html>
