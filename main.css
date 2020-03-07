@@ -1,0 +1,121 @@
+html {
+    overflow-x: hidden;
+}
+
+
+.frontPage{
+    width: 100vw;
+    height: 750px;
+    background-image:  url('Intro.svg');
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow-x: hidden;
+}
+
+#loginBtn{
+    width: 80px;
+    height: 40px;
+    border: none;
+    z-index: 1;
+    position: absolute;
+    top: 10px;
+    right: 125px;
+    background-color: rgba(0,0,0,0);
+    font-size: 16px;
+    font-weight: 900;
+}
+
+#signupBtn{
+    width: 80px;
+    height: 40px;
+    border: 0;
+    z-index: 1;
+    right: 30px;
+    top: 10px;
+    position: absolute;
+    background-color: rgba(0,0,0,0);
+    font-size: 15px;
+    font-weight: 900;
+}
+.centerTitle{
+    text-align: center;
+    position: relative;
+    top: 40vh;
+}
+
+#title{
+    text-align: center;
+    font-size: 72px;
+    display: inline-block;
+}
+
+#briefIntro{
+    text-align: center;
+    font-size: 24px;
+    position: relative;
+    top: 55vh;
+}
+
+#movingDot{
+    width: 20px;
+    height: 20px;
+    z-index: 0;
+    border-radius: 10px;
+    position: absolute;
+    right: 30vw;
+    top: 300px;
+    background-color: purple;
+    animation:anim 5s infinite;
+}
+
+@keyframes anim{
+    0%{left:80vw; top:35vh;}
+    25%{left:20vw; top:35vh;}
+    50%{left:20vw; top:55vh;}
+    75%{left:80vw; top:55vh;}
+    100%{left:80vw; top:35vh;}
+}
+
+.introduction{
+    width: 100vw;
+    height: 300px;
+    background-color: white;
+    position: absolute;
+    top: 750px;
+    text-align: center;
+    font-size: 18pt;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.introduction div{
+    position:relative;
+    top: 50px;
+    width: 95%;
+    text-align: center;
+    display: inline-block;
+    z-index: 1;
+    font-weight: bold;
+    line-height: 50px;
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+.features{
+    width: 100vw;
+    height: 1000px;
+    position: absolute;
+    top: 750px;
+    left: 0px;
+    background-image: url('Linear.svg');
+    z-index: 0;
+    overflow-x: hidden;
+}
+
+.conclusion{
+    position: absolute;
+    width: 100vw;
+    height: 530px;
+    top: 2050px;
+    overflow-x: hidden;
+}
