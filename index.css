@@ -116,8 +116,8 @@ html {
 }
 
 #movingDot{
-    width: 20px;
-    height: 20px;
+    width: 80px;
+    height: 40px;
     z-index: 1;
     border-radius: 10px;
     position: absolute;

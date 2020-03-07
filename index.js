@@ -1,17 +1,17 @@
-function btnHover(obj){
-    var oDot = document.getElementById('movingDot');
-    oDot.style.animation = 'none';
-    startMove(oDot, {'top': obj.offsetTop, 'left': obj.offsetLeft, 'height': obj.offsetHeight, 'width': obj.offsetWidth}, 1);
-}
-
-function btnUnhover(obj, fnEnd){
-    var oDot = document.getElementById('movingDot');
-    startMove(oDot, {}, 100, function () {
-        startMove(oDot, {'top': 300, 'left': obj.offsetLeft, 'height': 20, 'width': 20}, 1, function () {
-            oDot.style.animation = 'anim 5s infinite';
-        })
-    })
-}
+// function btnHover(obj){
+//     var oDot = document.getElementById('movingDot');
+//     oDot.style.animation = 'none';
+//     startMove(oDot, {'top': obj.offsetTop, 'left': obj.offsetLeft, 'height': "40px", 'width': "80px"}, 1);
+// }
+//
+// function btnUnhover(obj, fnEnd){
+//     var oDot = document.getElementById('movingDot');
+//     startMove(oDot, {}, 100, function () {
+//         startMove(oDot, {'top': 300, 'left': obj.offsetLeft, 'height': 20, 'width': 20}, 1, function () {
+//             oDot.style.animation = 'anim 5s infinite';
+//         })
+//     })
+// }
 
 function changeStatus(obj, str) {
     obj.style.display = str;
@@ -41,15 +41,34 @@ function displayChange(oFeature, obj, str){
     }
 }
 
-
-function showLiSu(iThis, iOther){
-    switchLiSuMethod(iThis, iOther);
+document.getElementById('loginBtn').addEventListener('click', (e) => {
+    e.stopPropagation();
+    switchLiSuMethod("changeToLogIn", "changeToSignUp");
     var oBody = document.getElementById('wrapper');
     var oLiSu = document.getElementById('loginSignup');
+    oLiSu.style.display = "block";
     startMove(oBody, {'opacity': 40}, 50);
     startMove(oLiSu, {'opacity': 100}, 50);
-}
-
+})
+document.getElementById('signupBtn').addEventListener('click', (e) => {
+    e.stopPropagation();
+    switchLiSuMethod("changeToSignUp", "changeToLogIn");
+    var oBody = document.getElementById('wrapper');
+    var oLiSu = document.getElementById('loginSignup');
+    oLiSu.style.display = "block";
+    startMove(oBody, {'opacity': 40}, 50);
+    startMove(oLiSu, {'opacity': 100}, 50);
+})
+document.getElementById('btmSignupBtn').addEventListener('click', (e) => {
+    e.stopPropagation();
+    e.stopPropagation();
+    switchLiSuMethod("changeToSignUp", "changeToLogIn");
+    var oBody = document.getElementById('wrapper');
+    var oLiSu = document.getElementById('loginSignup');
+    oLiSu.style.display = "block";
+    startMove(oBody, {'opacity': 40}, 50);
+    startMove(oLiSu, {'opacity': 100}, 50);
+})
 
 
 function switchLiSuMethod(iThis, iOther){
@@ -83,3 +102,13 @@ function switchLiSuMethod(iThis, iOther){
         oCfmIp.style.top = '46vh';
     }
 }
+
+document.addEventListener("click", (e)=>{
+    document.getElementById("loginSignup").style.display = "none";
+    document.getElementById('wrapper').style.opacity = 100;
+    document.getElementById('loginSignup').style.opacity = 0;
+})
+
+document.getElementById('loginSignup').addEventListener('click', (e) => {
+    e.stopPropagation();
+})
