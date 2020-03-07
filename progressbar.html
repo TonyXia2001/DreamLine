@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="progressbar.css">
+    <link href="https://fonts.googleapis.com/css?family=Asap:400i,700i&display=swap" rel="stylesheet">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>progress bar</title>
+  </head>
+  <body>
+    <section class = "top">
+      <span id = "user-icon" class="icon fas fa-user"></span>
+      <span class="search-bar"><input type="text" class="searchTerm" placeholder="What are you looking for?">
+      <button type="submit" class="searchButton">
+        <i class="fa fa-search"></i>
+     </button></span>
+    </section>
+
+    <div class="nav-bar"></div>
+
+    <section class = "bar-page">
+        <div class="rightColumn">
+            <div class="progress">
+              <div id = "one" class="progress-bar progress-bar-striped bg-success progress-bar-animated" role="progressbar" aria-valuenow="10"
+              aria-valuemin="0" aria-valuemax="100" style="width:10%; height: 7vh" ><div class = "progress-content">10%</div></div>
+            </div>
+          <div id="tasks"></div>
+          <div id = "plus-task"><button onclick="plus_task()" id = "add-task">+</button></div>
+        </div>
+
+
+      <div class="leftColumn">
+          <div id = "bar-list" class = "">
+            <div id ="goals"></div>
+            <div class = "ls-item"><button onclick="plus()" id = "plus-item">+</button></div></div>
+            <!-- <li class = "ls-item"></li>
+            <li class = "ls-item"></li>
+            <li class = "ls-item"></li>
+            <li class = "ls-item"></li> -->
+          </div>
+        </div>
+
+    </section>
+
+    <script src = "progressbar.js"></script>
+  </body>
+</html>

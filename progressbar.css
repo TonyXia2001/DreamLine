@@ -1,0 +1,174 @@
+html {
+  overflow-x: hidden;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+body{
+
+}
+
+.search-bar {
+  position:absolute;
+  width: 65vw;
+  margin-top: 1.5vh;
+  display: flex;
+  left: 75vw;
+}
+.searchTerm {
+  width: 30%;
+  border: 3px solid #00B4CC;
+  border-right: none;
+  padding: 5px;
+  height: 5vh;
+  border-radius: 6px 0 0 5px;
+  font-size: 13px;
+  outline: none;
+  color: #9DBFAF;
+}
+.searchButton {
+  width: 35px;
+  height: 5vh;
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 7px 7px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+.body{
+  margin: 0;
+}
+.top{
+  position: absolute;
+  top: 1.5vh;
+}
+#user-icon{
+  position:absolute;
+  left:1.5vw;
+  padding: 1vw;
+  border: 0.13vw solid black;
+  border-radius: 50%;
+  background-color: white;
+}
+#user-icon:hover{
+  cursor:pointer;
+}
+.nav-bar{
+  margin-top: 11vh;
+  border: 0.2vh solid black;
+}
+.column {
+  float: left;
+  width: 50%;
+}
+
+.progress{
+  margin: 0 auto;
+  margin-top: 8.5vh;
+  width: 55vw;
+  left: 60vw;
+  right: 0;
+  height: 10vh;
+  border-radius: 10px 10px 10px 10px;
+  height: 7vh;
+}
+
+.bar-list{
+  margin-top: 5vh;
+  margin-left: 10vw;
+  left: 10vw;
+}
+
+#task-list{
+  position: absolute;
+  margin-top: 5vh;
+  height: 100%;
+  width: 100%;
+}
+.rightColumn{
+  position: absolute;
+  left:25vw;
+  width:75vw;
+  height:89vh;
+}
+
+.leftColumn{
+  position:absolute;
+  width:25vw;
+  height:89vh;
+  border-right: solid black;
+}
+
+#one{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: rgba(69, 247, 240, 1) !important;
+}
+.progress-content{
+  font-family: 'Asap', sans-serif;
+  color: black;
+}
+ul{
+  text-align: center;
+  border-bottom: 1px;
+}
+.ls-item{
+  margin-top: 2vh;
+  text-align: center;
+  padding: 0 10vw 0 10vw;
+}
+#plus-task{
+  width: 100%;
+  text-align: center;
+}
+#goals{
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#tasks{
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#add-task{
+  display: inline-block;
+  margin-top: 5vh;
+  border-top: 1px solid silver;
+  background: white;
+  border-radius: 35%;
+  width: 50px;
+  height: 50px;
+  /* border-radius: 50%; */
+}
+#plus-item{
+  margin-top: 5vh;
+  width: 60px;
+  height: 60px;
+  display: inline-block;
+  background: pink;
+  font-size: 30px;
+  border-radius: 50%;
+  border: solid 1px black;
+}
+.plus-bar{
+  font-family: 'Asap', sans-serif;
+  margin-top: 3vh;
+  width = 50%;
+  border: none;
+  border-bottom: 1px solid silver;
+  outline-width: 0;
+}
+.plus-button{
+  position: absolute;
+  margin-top: 3vh;
+  border-radius: 50%;
+  left: 2.5vw;
+  width: 10%;
+  background: rgba(234,123,221,0.5);
+}
