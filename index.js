@@ -13,9 +13,8 @@ function btnUnhover(obj, fnEnd){
     })
 }
 
-function changeStatus(obj, str, event) {
+function changeStatus(obj, str) {
     obj.style.display = str;
-    event.stopPropagation;
 }
 
 window.onscroll = function () {
@@ -39,5 +38,48 @@ function displayBlock(obj, index, a){
 function displayChange(oFeature, obj, str){
     for(var i = 0; i < oFeature.length; i++){
         if(oFeature[i].id != obj.id) oFeature[i].style.display = str;
+    }
+}
+
+
+function showLiSu(iThis, iOther){
+    switchLiSuMethod(iThis, iOther);
+    var oBody = document.getElementById('wrapper');
+    var oLiSu = document.getElementById('loginSignup');
+    startMove(oBody, {'opacity': 40}, 50);
+    startMove(oLiSu, {'opacity': 100}, 50);
+}
+
+
+
+function switchLiSuMethod(iThis, iOther){
+    var oThisBtn = document.getElementById(iThis);
+    var oOtherBtn = document.getElementById(iOther);
+    oThisBtn.style.background = 'rgba(154, 18, 179, 0.5)';
+    oOtherBtn.style.background = 'rgba(255, 255, 255, 1)';
+
+    var oUNameP = document.getElementById('uNameP');
+    var oUNameIp = document.getElementById('usernameIp');
+    var oPWordP = document.getElementById('pWordP');
+    var oPWordIp = document.getElementById('passwordIp');
+    var oCfmP = document.getElementById('conPwordP');
+    var oCfmIp = document.getElementById('confirmIp');
+    if(iThis == 'changeToLogIn'){
+        oUNameP.style.top = '23vh';
+        oUNameIp.style.top = '25vh';
+        oPWordP.style.top = '38vh';
+        oPWordIp.style.top = '40vh';
+        oCfmP.style.display = 'none';
+        oCfmIp.style.display = 'none';
+    }
+    else{
+        oUNameP.style.top = '18vh';
+        oUNameIp.style.top = '20vh';
+        oPWordP.style.top = '31vh';
+        oPWordIp.style.top = '33vh';
+        oCfmP.style.display = 'block';
+        oCfmIp.style.display = 'block'
+        oCfmP.style.top = '41vh';
+        oCfmIp.style.top = '46vh';
     }
 }

@@ -1,0 +1,90 @@
+.LiSuBtn{
+    border-color: black;
+    background-color: white;
+    border-width: 1px;
+    position: absolute;
+    width: 20vw;
+    height: 10vh;
+    font-size: 20pt;
+}
+
+
+#loginSignup{
+    position: fixed;
+    width: 40vw;
+    height: 70vh;
+    top: 15vh;
+    left: 30vw;
+    background-color: white;
+    opacity: 0;
+    z-index: 3;
+}
+
+#changeToLogIn{
+    left: 0vw;
+}
+
+#changeToSignUp{
+    left: 20vw;
+}
+
+#changeToLogIn:hover, #changeToSignUp:hover, #submitBtn:hover{
+    background-color: rgba(154, 18, 179, 1);
+    color: white;
+}
+
+.LiSuIp{
+    position: absolute;
+    padding-left: 10px;
+    left: 10vw;
+    width: 20vw;
+    height: 6vh;
+    font-size: 20pt;
+    border-color: black;
+    border-width: 1.5px;
+}
+
+#usernameIp{
+    top: 20vh;
+}
+
+#uNameP{
+    font-size: 20pt;
+    position: absolute;
+    top: 18vh;
+    left: 2vh;
+}
+
+#passwordIp{
+    top: 33vh;
+}
+
+#pWordP{
+    font-size: 20pt;
+    position: absolute;
+    top: 31vh;
+    left: 2vh;
+}
+
+#conPwordP{
+    font-size: 20pt;
+    position: absolute;
+    top: 42vh;
+    left: 2vh;
+}
+
+#confirmIp{
+    top: 46vh;
+}
+
+#submitBtn{
+    width:15vw;
+    height: 7vh;
+    background-color: white;
+    border-color: black;
+    border-width: 1px;
+    position: absolute;
+    top: 57vh;
+    left: 12vw;
+    font-size: 18pt;
+}

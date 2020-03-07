@@ -40,7 +40,6 @@ function startMoveWH(obj, json, v, dir, fnEnd){
                 : parseInt(getStyle(obj, attr));
             if(attr == 'height' || attr =='top'){
                 cur = Math.round(cur / document.documentElement.clientHeight * 100);
-                if(attr == 'height')console.log('a' + cur);
             }
             else if (attr == 'width')
                 cur = parseInt(cur / document.documentElement.clientWidth * 100);

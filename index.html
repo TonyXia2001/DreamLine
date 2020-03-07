@@ -4,24 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="main.css">
-    <script src="makeChange.js" charset="utf-8"></script>
-    <script src="main.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="loginSignup.css">
+    <script src="makeChange.js" charset="utf-8" defer></script>
+    <script src="index.js" charset="utf-8" defer></script>
     <title>TaskManager</title>
 </head>
 <body>
+    <section id='loginSignup'>
+        <button class = LiSuBtn id="changeToLogIn" onclick = 'switchLiSuMethod("changeToLogIn", "changeToSignUp")'>Log in</button>
+        <button class = LiSuBtn id="changeToSignUp" onclick = 'switchLiSuMethod("changeToSignUp", "changeToLogIn")'>Sign Up</button>
+        <div class = LiSuIpDiv id = userNameDiv>
+            <p id = uNameP>Username: </p>
+            <input class = LiSuIp id = usernameIp type="text" placeholder="Username">
+        </div>
+        <div class = LiSuIpDiv id= passwordDiv>
+            <p id = pWordP>Password: </p>
+            <input class = LiSuIp id = passwordIp type="password" placeholder="Password">
+        </div>
+        <div class = LiSuIpDiv id = confirmDiv>
+            <p id = conPwordP>Confirm <br> Password: </p>
+            <input class = LiSuIp id = confirmIp type="password" placeholder="Password">
+        </div>
+        <input type="submit" id=submitBtn>
+    </section>
     <article id=wrapper>
         <heading id=navBar>
             <div id=icon></div>
             <div id=barMask></div>
-            <button id='loginBtn' onmouseover = 'btnHover(this)' onmouseout = 'btnUnhover(this)'>
+            <button id='loginBtn' onmouseover = 'btnHover(this)' onmouseout = 'btnUnhover(this)' onclick = 'showLiSu("changeToLogIn", "changeToSignUp")'>
                 Log in
             </button>
-            <button id="signupBtn" onmouseover = 'btnHover(this)' onmouseout = 'btnUnhover(this)'>
+            <button id="signupBtn" onmouseover = 'btnHover(this)' onmouseout = 'btnUnhover(this)' onclick = 'showLiSu("changeToSignUp", "changeToLogIn")'>
                 Sign up
             </button>
             <div id=searchBar>
-                <input id = 'searchInput' type="text" placeholder="  Search">
+                <input id = 'searchInput' type="text" placeholder="Search">
                 <div onmouseover = 'btnHover(this)' onmouseout = 'btnUnhover(this)'
                     onclick = 'changeStatus(document.getElementById("searchInput"), "inline-block")'>
                     <img id=searchBtn src="bgImage/searchIcon.svg" alt="x">
