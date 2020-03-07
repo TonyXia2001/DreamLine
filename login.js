@@ -29,19 +29,18 @@ document.getElementById('submitBtn').addEventListener('click', async (e)=>{
                 username: username,
                 password: password
             };
-            try {
-                // create the user
-                let response = await fetch('https://dreamline-270317.appspot.com/login/new', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(user)
-                });
-                login(user);
-
-            } catch (e) {
+            // create the user
+            let response = await fetch('https://dreamline-270317.appspot.com/login/new', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(user)
+            });
+            if (response.status == 401) {
                 alert("the username is taken");
+            } else {
+                login(user);
             }
         }
     }
