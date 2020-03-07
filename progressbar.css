@@ -8,8 +8,10 @@ body{
 
 }
 
+/* search bar upper right */
 .search-bar {
   position:absolute;
+  top: 1.7vh;
   width: 65vw;
   margin-top: 1.5vh;
   display: flex;
@@ -19,9 +21,9 @@ body{
   width: 30%;
   border: 3px solid #00B4CC;
   border-right: none;
-  padding: 5px;
+  padding: 10px;
   height: 5vh;
-  border-radius: 6px 0 0 5px;
+  border-radius: 16px 0 0 16px;
   font-size: 13px;
   outline: none;
   color: #9DBFAF;
@@ -33,7 +35,7 @@ body{
   background: #00B4CC;
   text-align: center;
   color: #fff;
-  border-radius: 0 7px 7px 0;
+  border-radius: 0 16px 16px 0;
   cursor: pointer;
   font-size: 20px;
 }
@@ -43,36 +45,41 @@ body{
 .top{
   position: absolute;
   top: 1.5vh;
+  background: rgba(40,46,63,0.9);
 }
+
 #user-icon{
   position:absolute;
   left:1.5vw;
   padding: 1vw;
+  top:1.7vh;
   border: 0.13vw solid black;
   border-radius: 50%;
   background-color: white;
 }
 #user-icon:hover{
+  position: absolute;
   cursor:pointer;
 }
 .nav-bar{
-  margin-top: 11vh;
-  border: 0.2vh solid black;
-}
-.column {
-  float: left;
-  width: 50%;
+  background-color: rgba(55,55,120,1);
+  position: absolute;
+  height: 11vh;
+  width: 100%;
+  border-bottom: 1px solid black;
+  top: 0;
 }
 
 .progress{
   margin: 0 auto;
-  margin-top: 8.5vh;
-  width: 55vw;
+  margin-top: 10vh;
+  width: 65vw;
   left: 60vw;
   right: 0;
   height: 10vh;
-  border-radius: 10px 10px 10px 10px;
+  border-radius: 15px 15px 15px 15px;
   height: 7vh;
+  border: 2px solid silver;
 }
 
 .bar-list{
@@ -90,22 +97,55 @@ body{
 .rightColumn{
   position: absolute;
   left:25vw;
-  width:75vw;
+  top:11vh;
+  width:80vw;
   height:89vh;
 }
 
 .leftColumn{
   position:absolute;
-  width:25vw;
+  top:11vh;
+  width:20vw;
   height:89vh;
-  border-right: solid black;
+  border-right: 1px solid black;
+  background-color: rgba(55,55,120,0.7);
+  text-align: center;
 }
 
+/* five progresses */
 #one{
   display: flex;
   flex-direction: row;
   align-items: center;
-  background-color: rgba(69, 247, 240, 1) !important;
+  background-color: rgba(255, 0, 0 ,1) !important;
+}
+
+#two{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: rgba(255, 255, 0, 1) !important;
+}
+#three{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: rgba(0, 255, 0, 1) !important;
+}
+#four{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: rgba(255, 0, 255, 1) !important;
+}
+#five{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: rgba(255, 155, 0, 1) !important;
+}
+.progress-bar:hover{
+  opacity: 0.7;
 }
 .progress-content{
   font-family: 'Asap', sans-serif;
@@ -118,7 +158,6 @@ ul{
 .ls-item{
   margin-top: 2vh;
   text-align: center;
-  padding: 0 10vw 0 10vw;
 }
 #plus-task{
   width: 100%;
@@ -136,39 +175,81 @@ ul{
   flex-direction: column;
   align-items: center;
 }
+
 #add-task{
   display: inline-block;
   margin-top: 5vh;
-  border-top: 1px solid silver;
-  background: white;
-  border-radius: 35%;
+  border-radius: 50%;
   width: 50px;
   height: 50px;
-  /* border-radius: 50%; */
+  outline: none;
+  filter: invert(70%) sepia(79%) saturate(421%) hue-rotate(59deg) brightness(108%) contrast(94%);
 }
+
+
 #plus-item{
   margin-top: 5vh;
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   display: inline-block;
   background: pink;
-  font-size: 30px;
+  font-size: 20px;
   border-radius: 50%;
   border: solid 1px black;
+  outline: none;
+  background-color: rgba(255, 0, 0, 1);
 }
-.plus-bar{
+#plus-item:hover{
+  background-color: rgba(255, 0, 0, 0.6);
+}
+
+#add-task:hover{
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+
+/* These are for the added items */
+.plus-bar-left{
   font-family: 'Asap', sans-serif;
   margin-top: 3vh;
-  width = 50%;
+  width : 50%;
   border: none;
   border-bottom: 1px solid silver;
   outline-width: 0;
 }
-.plus-button{
+
+.plus-bar-right{
+  font-family: 'Asap', sans-serif;
+  margin-top: 5vh;
+  width : 65%;
+  border: none;
+  border-bottom: 1px solid silver;
+  outline-width: 0;
+  text-align: center;
+}
+
+.plus-button-left{
   position: absolute;
   margin-top: 3vh;
   border-radius: 50%;
-  left: 2.5vw;
+  left: 1.5vw;
   width: 10%;
-  background: rgba(234,123,221,0.5);
+  outline: none;
+  background-color: rgba(255, 0, 0, 1);
+}
+
+.plus-button-right{
+  position: absolute;
+  margin-top: 2vh;
+  border-radius: 50%;
+  left: 8vw;
+  width: 3vw;
+  height: 3vw;
+  outline: none;
+  background: rgba(255, 0, 0, 1);
+}
+
+/* bar-design */
+.empty-bar{
+
 }

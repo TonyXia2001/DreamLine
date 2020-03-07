@@ -7,43 +7,51 @@
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src = "progressbar.js" defer></script>
+    <script src= "front_back_progressbar.js" defer></script>
     <title>progress bar</title>
   </head>
   <body>
-    <section class = "top">
-      <span id = "user-icon" class="icon fas fa-user"></span>
-      <span class="search-bar"><input type="text" class="searchTerm" placeholder="What are you looking for?">
-      <button type="submit" class="searchButton">
-        <i class="fa fa-search"></i>
-     </button></span>
+    <section>
+      <!-- <div class="top"> -->
+     <!-- </div> -->
     </section>
 
-    <div class="nav-bar"></div>
+    <div class="nav-bar">
+      <span id = "user-icon" class="icon fas fa-user"></span>
+      <span class="search-bar"><input type="text" class="searchTerm" placeholder="What are you looking for?">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button></span>
+
+    </div>
 
     <section class = "bar-page">
         <div class="rightColumn">
             <div class="progress">
               <div id = "one" class="progress-bar progress-bar-striped bg-success progress-bar-animated" role="progressbar" aria-valuenow="10"
-              aria-valuemin="0" aria-valuemax="100" style="width:10%; height: 7vh" ><div class = "progress-content">10%</div></div>
+              aria-valuemin="0" aria-valuemax="20" style="width:20%; height: 7vh" ><div class = "progress-content"></div></div>
+              <div id = "two" class="progress-bar progress-bar-striped bg-success progress-bar-animated" role="progressbar" aria-valuenow="10"
+              aria-valuemin="0" aria-valuemax="20" style="width:20%; height: 7vh" ><div class = "progress-content"></div></div>
+              <div id = "three" class="progress-bar progress-bar-striped bg-success progress-bar-animated" role="progressbar" aria-valuenow="10"
+              aria-valuemin="0" aria-valuemax="20" style="width:20%; height: 7vh" ><div class = "progress-content"></div></div>
+              <div id = "four" class="progress-bar progress-bar-striped bg-success progress-bar-animated" role="progressbar" aria-valuenow="10"
+              aria-valuemin="0" aria-valuemax="20" style="width:20%; height: 7vh" ><div class = "progress-content"></div></div>
+              <div id = "five" class="progress-bar progress-bar-striped bg-success progress-bar-animated" role="progressbar" aria-valuenow="10"
+              aria-valuemin="0" aria-valuemax="20" style="width:20%; height: 7vh" ><div class = "progress-content"></div></div>
             </div>
           <div id="tasks"></div>
-          <div id = "plus-task"><button onclick="plus_task()" id = "add-task">+</button></div>
+          <div id = "plus-task"><img id = "add-task" src = "./progressbarimage/add_circle_outline-24px.svg" onclick="plus_task()"></img></div>
         </div>
 
 
       <div class="leftColumn">
-          <div id = "bar-list" class = "">
             <div id ="goals"></div>
             <div class = "ls-item"><button onclick="plus()" id = "plus-item">+</button></div></div>
-            <!-- <li class = "ls-item"></li>
-            <li class = "ls-item"></li>
-            <li class = "ls-item"></li>
-            <li class = "ls-item"></li> -->
           </div>
         </div>
 
     </section>
 
-    <script src = "progressbar.js"></script>
   </body>
 </html>
