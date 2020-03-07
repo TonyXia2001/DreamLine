@@ -1,11 +1,7 @@
 // var goals = getElementById("goals");
 // var tasks = getElementById("tasks");
 var progress;
-// var one = getElementById("one");
-// var two = getElementById("two");
-// var three = getElementById("three");
-// var four = getElementById("four");
-// var five = getElementById("five");
+var bar_status = document.getElementsByClassName("bar-status")
 
 function fetch1(){
   fetch('https://dreamline-270317.appspot.com/users/all')
@@ -13,10 +9,10 @@ function fetch1(){
       return response.json();
     })
     .then((data) => {
-      console.log(data);
-
       progress = extractUserdata(data);// get bars from user 1
-      console.log(progress);
+      console.log(progress[0]);
+      console.log(progress[0][0].tasks[0].completion);
+      changeBarDisplay(barRatio(progress[0][0].tasks));
   });
 }
 
@@ -36,8 +32,67 @@ function extractUserdata(a){
   return b;
 }
 
-function barDisplay(a){
-
+function barRatio(progressData){
+  let count = 0;
+  for (let i = 0; i < progressData.length; i++){
+    if (progressData[i].completion === true){
+      count++;
+    }
+  }
+  if(count === 0) {return count;}
+  return ((100*count/progressData.length));
+}
+function changeBarDisplay(ratio){
+  console.log(ratio);
+  if(ratio < 20){
+    ratio_string = ratio.toString() + "%";
+    console.log(ratio_string);
+    bar_status[0].style.width = ratio_string;
+    bar_status[1].style.width = 0;
+    bar_status[2].style.width = 0;
+    bar_status[3].style.width = 0;
+    bar_status[4].style.width = 0;
+  }
+  if(ratio >= 20 && ratio <= 40){
+    ratio -= 20;
+    ratio_string = ratio.toString() + "%";
+    console.log(ratio_string);
+    bar_status[0].style.width = "20%";
+    bar_status[1].style.width = ratio_string;
+    bar_status[2].style.width = 0;
+    bar_status[3].style.width = 0;
+    bar_status[4].style.width = 0;
+  }
+  if(ratio >= 40 && ratio <= 60){
+    ratio -= 40;
+    ratio_string = ratio.toString() + "%";
+    console.log(ratio_string);
+    bar_status[1].style.width = "20%";
+    bar_status[0].style.width = "20%";
+    bar_status[2].style.width = ratio_string;
+    bar_status[3].style.width = 0;
+    bar_status[4].style.width = 0;
+  }
+  if(ratio >= 60 && ratio <= 80){
+    ratio -= 60;
+    ratio_string = ratio.toString() + "%";
+    console.log(ratio_string);
+    bar_status[1].style.width = "20%";
+    bar_status[0].style.width = "20%";
+    bar_status[2].style.width = "20%";
+    bar_status[3].style.width = ratio_string;
+    bar_status[4].style.width = 0;
+  }
+  if(ratio >= 80 && ratio <= 100){
+    ratio -= 80;
+    ratio_string = ratio.toString() + "%";
+    console.log(ratio_string);
+    bar_status[1].style.width = "20%";
+    bar_status[0].style.width = "20%";
+    bar_status[2].style.width = "20%";
+    bar_status[3].style.width = "20%";
+    bar_status[4].style.width = ratio_string;
+  }
 }
 // 1. extract all the bars from data base
 // 2. make new bars according to the statistics
@@ -45,9 +100,11 @@ function barDisplay(a){
 
 function main(){
   fetch1();
+  console.log(bar_status);
 }
 
 main();
+
 // (2) [{…}, {…}]
 // 0:
 // completion: false
