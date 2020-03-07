@@ -283,3 +283,7 @@ html {
     border-color: black;
     font-size: 20pt;
 }
+
+#loginSignup {
+    display: none;
+}
