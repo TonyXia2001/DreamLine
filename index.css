@@ -1,0 +1,285 @@
+html {
+    overflow-x: hidden;
+}
+
+#navBar{
+    width: 100vw;
+    height: 5vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.5);
+    z-index: 2;
+}
+
+#barMask{
+    width: 100vw;
+    height: 5vw;
+    position: fixed;
+    top: 0;
+    right: 100vw;
+    background: rgba(154, 18, 179, 0.5)
+}
+
+#frontPage{
+    width: 100vw;
+    height: 100vh;
+    background-image:  url('bgImage/Intro.jpg');
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow-x: hidden;
+}
+
+#loginBtn{
+    width: 80px;
+    height: 40px;
+    border: none;
+    z-index: 3;
+    position: absolute;
+    top: 20px;
+    right: 125px;
+    background-color: rgba(0,0,0,0);
+    font-size: 16px;
+    font-weight: 900;
+}
+
+#signupBtn{
+    width: 80px;
+    height: 40px;
+    border: 0;
+    z-index: 3;
+    right: 30px;
+    top: 20px;
+    position: absolute;
+    background-color: rgba(0,0,0,0);
+    font-size: 16px;
+    font-weight: 900;
+}
+
+#loginBtn:hover, #searchBar div:hover, #signupBtn:hover, #btmSignupBtn:hover{
+    background: rgba(154, 18, 179, 0.5);
+    transition-delay: 0.07s;
+    cursor:pointer;
+}
+
+#searchBar input{
+    padding: 10px;
+    position: absolute;
+    background: rgba(255,255,255,1);
+    height: 30px;
+    width: 40vw;
+    left: 30vw;
+    top: 15px;
+    border-color: purple;
+    border-radius: 20px;
+    display: none;
+    z-index: 3;
+    font-size: 20pt;
+}
+
+#searchBar img{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 5px;
+    left: 5px;
+    z-index: 3;
+}
+
+#searchBar div{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 25px;
+    right: 250px;
+    z-index: 3;
+}
+
+.centerTitle{
+    text-align: center;
+    position: relative;
+    top: 40vh;
+}
+
+#title{
+    text-align: center;
+    font-size: 72pt;
+    display: inline-block;
+}
+
+#briefIntro{
+    text-align: center;
+    font-size: 24pt;
+    position: relative;
+    top: 55vh;
+}
+
+#movingDot{
+    width: 20px;
+    height: 20px;
+    z-index: 1;
+    border-radius: 10px;
+    position: absolute;
+    right: 30vw;
+    top: 300px;
+    background-color: purple;
+    animation:anim 5s infinite;
+}
+
+@keyframes anim{
+    0%{left:80vw; top:35vh;}
+    25%{left:20vw; top:35vh;}
+    50%{left:20vw; top:55vh;}
+    75%{left:80vw; top:55vh;}
+    100%{left:80vw; top:35vh;}
+}
+
+#introduction{
+    width: 100vw;
+    height: 300px;
+    background-color: white;
+    position: absolute;
+    top: 120vh;
+    text-align: center;
+    font-size: 18pt;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+#introduction div{
+    position:relative;
+    width: 95%;
+    text-align: center;
+    display: inline-block;
+    z-index: 1;
+    font-weight: bold;
+    line-height: 50px;
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+#features{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 100vh;
+    left: 0px;
+    background: linear-gradient(180deg, rgba(122, 50, 239, 0.405) 0%, rgba(140, 66, 234, 0.511502) 30.52%, rgba(130, 87, 252, 0.555412) 66.43%, rgba(137, 143, 191, 0.75) 101.42%);
+    background-blend-mode: darken;
+    transform: matrix(1, 0, 0, -1, 0, 0);
+    overflow-x: hidden;
+}
+
+#FeatureTitle{
+    width: 100vw;
+    height: 20vh;
+    position: absolute;
+    text-align: center;
+    top: 180vh;
+    font-size: 36pt;
+}
+
+.feature{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    width: 90vw;
+    height: 20vh;
+    left: 5vw;
+    background-color: white;
+    z-index: 1;
+    text-align: center;
+    font-size: 36pt;
+    line-height: 20vh;
+    overflow-y: hidden;
+}
+
+.featureBG{
+    position: absolute;
+    background-size: 100vw, auto;
+    width: 90vw;
+    height: 80vh;
+    z-index: 0;
+    opacity: 0.3;
+}
+
+#featureBG1{
+    background-image: url('bgImage/FuturePlanning.jpg');
+}
+
+.featureP{
+    z-index: 1;
+}
+
+#feature1{
+    z-index: 1;
+    top: 200vh;
+}
+
+#feature2{
+    top: 220vh;
+}
+
+#featureBG2{
+    background-image: url('bgImage/StandingTop.jpg');
+}
+
+#feature3{
+    top: 240vh;
+}
+
+#featureBG3{
+    background-image: url('bgImage/DecisionMaking.jpg');
+}
+
+#feature4{
+    top: 260vh;
+}
+
+#featureBG4{
+    background-image: url('bgImage/StartDoing.jpg');
+}
+
+#conclusion{
+    position: absolute;
+    background: linear-gradient(180deg, rgba(122, 50, 239, 0.405) 0%, rgba(161, 58, 241, 0.5475) 30.52%, rgba(190, 74, 245, 0.4875) 62.86%, rgba(112, 0, 255, 0.1275) 101.42%);
+    background-blend-mode: darken;
+    width: 100vw;
+    height: 100vh;
+    top: 200vh;
+    left: 0px;
+    overflow-x: hidden;
+}
+
+#footer{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 300vh;
+    left: 0px;
+    background: radial-gradient(101.71% 42.33% at 50% 59.08%, rgba(112, 0, 255, 0.1575) 0%, rgba(190, 74, 245, 0.24) 33.85%, rgba(161, 58, 241, 0.3825) 63.02%, rgba(122, 50, 239, 0.405) 100%);
+    background-blend-mode: darken;
+}
+
+#footer div{
+    position: relative;
+    width: 70vw;
+    top: 15vh;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 75px;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 25pt;
+    font-weight: bold;
+}
+
+#btmSignupBtn{
+    position: relative;
+    left: 40vw;
+    top: 30vh;
+    width: 20vw;
+    height: 80px;
+    background: rgba(0,0,0,0);
+    border-color: black;
+    font-size: 20pt;
+}
