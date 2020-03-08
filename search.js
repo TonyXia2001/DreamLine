@@ -1,65 +1,11 @@
-arr = [
-    {
-        title: "yes0",
-        tasks:[
-            {description: "hello world"},
-            {description: "good morning"}
-        ]
-    },
-    {
-        title: "no1",
-        tasks:[
-            {description: "bye world"}
-        ]
-    },
-    {
-        title: "yes2",
-        tasks:[
-            {description: "hello world"},
-            {description: "good morning"}
-        ]
-    },
-    {
-        title: "no3",
-        tasks:[
-            {description: "bye world"}
-        ]
-    },
-    {
-        title: "yes4",
-        tasks:[
-            {description: "hello world"},
-            {description: "good morning"}
-        ]
-    },
-    {
-        title: "no5",
-        tasks:[
-            {description: "bye world"}
-        ]
-    },
-    {
-        title: "yes6",
-        tasks:[
-            {description: "hello world"},
-            {description: "good morning"}
-        ]
-    },
-    {
-        title: "no7",
-        tasks:[
-            {description: "bye world"}
-        ]
-    }
-]
-
 var page = 0;
 var maxPage = 0;
 var currPage = 0;
+var selectedTitleAndTasks = {};
 
 function random_rgba() {
     var o = Math.round, r = Math.random, s = 255;
-    return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + r().toFixed(1) + ')';
+    return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + 255 + ',' + r().toFixed(1) + ')';
 }
 
 function displayBatch(Eles, batch){
@@ -94,6 +40,12 @@ function loadResult(results) {
 }
 
 function showTasks(oTasks, arr, i) {
+    selectedTitleAndTasks.title = arr[i].title;
+    selectedTitleAndTasks.tasks = arr[i].tasks;
+    var items = document.getElementsByClassName('divTitle')
+    for(let i = 0; i < items.length; i++)
+        items[i].style.background = 'rgba(156, 238, 255, 0)';
+    items[i].style.background = 'rgba(73, 52, 255, 1)';
     for(let j = 0; j < oTasks.length; j++)
         oTasks[j].style.display = 'none';
     let count = 0;
@@ -102,19 +54,6 @@ function showTasks(oTasks, arr, i) {
     }
     for(let j = 0; j < arr[i].tasks.length; j++)
         oTasks[count + j].style.display = 'flex';
-}
-
-window.onload= function () {
-    loadResult(arr);
-    let oEles = document.getElementsByClassName('divTitle');
-    let oTasks = document.getElementsByClassName('mainTask');
-    for(let i = 0; i<oEles.length; i++){
-        var clickListeners = oEles[i].addEventListener('click', function () {
-            showTasks(oTasks, arr, i);
-        });
-    }
-    maxPage = Math.floor(oEles.length/7);
-    displayBatch(oEles, 0);
 }
 
 function changePage(dir) {
@@ -126,4 +65,108 @@ function changePage(dir) {
         displayBatch(oEles, currPage);
         document.getElementById('pageNum').innerHTML = currPage + 1;
     }
+}
+
+function displayData(result) {
+    loadResult(result);
+    let oEles = document.getElementsByClassName('divTitle');
+    let oTasks = document.getElementsByClassName('mainTask');
+    for(let i = 0; i<oEles.length; i++){
+        var clickListeners = oEles[i].addEventListener('click', function () {
+            showTasks(oTasks, result, i);
+        });
+    }
+    maxPage = Math.floor(oEles.length/7);
+    displayBatch(oEles, 0);
+    showTasks(oTasks, result, 0);
+}
+
+async function searchAndDisplay(txt) {
+    removeElementsByClass('divTitle');
+    removeElementsByClass('mainTask');
+    if(!txt){
+        document.getElementById('pMainContents').innerHTML = '';
+        return;
+    }
+    var response = await fetch(`https://dreamline-270317.appspot.com/search/${txt}`);
+    var result = await response.json();
+    if(result.length != 0){
+        document.getElementById('pMainContents').innerHTML = '';
+        displayData(result);
+    }
+    else{
+        document.getElementById('pMainContents').innerHTML = 'Search item not found!';
+    }
+}
+
+function removeElementsByClass(className){
+    var elements = document.getElementsByClassName(className);
+    while(elements.length > 0){
+        elements[0].parentNode.removeChild(elements[0]);
+    }
+}
+
+document.getElementById('searchTerm').addEventListener('keyup', (e)=>{
+    if (e.keyCode == 13) {
+        var txt = document.getElementById('searchTerm').value;
+        searchAndDisplay(txt);
+    }
+})
+
+document.getElementById('searchButton').addEventListener('click', ()=>{
+    var txt = document.getElementById('searchTerm').value;
+    searchAndDisplay(txt);
+})
+
+window.onload = function () {
+    if(window.sessionStorage["query"]){
+        searchAndDisplay(window.sessionStorage["query"]);
+    }
+}
+
+let clickUserIcon = document.getElementById('userMenuBlock').addEventListener('mouseover', (e)=>{
+    let oUserMenu = document.getElementById('userMenu');
+    startMove(oUserMenu, {}, 10, function () {
+        startMoveWH(oUserMenu, {'height': 20, 'width': 8}, 10);
+    })
+    e.stopPropagation();
+})
+
+let OffUserIcon = document.getElementById('userMenuBlock').addEventListener('mouseout', (e)=>{
+    let oUserMenu = document.getElementById('userMenu');
+    startMove(oUserMenu, {}, 10, function () {
+        startMoveWH(oUserMenu, {'height': 0, 'width': 0}, 10);
+    })
+    e.stopPropagation();
+})
+
+
+document.getElementById('CopyBtn').addEventListener('click', async ()=>{
+    var uName = window.sessionStorage["username"];
+    var body = {
+        username: uName,
+        title: selectedTitleAndTasks.title,
+        tasks: selectedTitleAndTasks.tasks
+    };
+    var header = window.sessionStorage["authorizedHeader"];
+    console.log(uName);
+    console.log(header);
+    console.log(body);
+    try {
+        var response = await fetch(`https://dreamline-270317.appspot.com/progress`, {
+            method: 'POST',
+            header: header,
+            body: body
+        })
+        window.location.href = "progressbar.html";
+    } catch (e) {
+        alert("Please log in to save result!");
+        window.location.href = ".";
+    }
+})
+
+function logout() {
+    window.sessionStorage["username"] = null;
+    window.sessionStorage["authorizedHeader"] = null;
+    alert("successfully log out!")
 }

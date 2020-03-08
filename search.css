@@ -65,11 +65,11 @@ body{
 #userMenu{
     height:0vh;
     width: 0vw;
-    background-color: white;
+    background: rgba(198, 231, 245, 0.95);
     padding-top: 10px;
     line-height: 4vh;
     position: absolute;
-    border-radius: 1vh;
+    border-radius: 1vw;
     left: 4vw;
     top: 7vh;
     z-index: 1;
@@ -78,6 +78,7 @@ body{
 
 .aMenu{
     position: absolute;
+    color: black;
     left:1vw;
     text-align: left;
     font-size: 1.1vw;
@@ -308,7 +309,8 @@ ul{
 }
 
 .divTitle:hover{
-    background: rgba(156, 238, 255, 0.3);
+    color: white;
+    cursor: pointer;
 }
 
 .mainContents{
@@ -318,6 +320,7 @@ ul{
     width: 80vw;
     height: 89vh;
     background: rgba(230, 230, 230, 1);
+    text-align: center;
 }
 
 .mainTask{
@@ -332,6 +335,12 @@ ul{
     font-weight: bold;
     font-family: "Trebuchet MS", Helvetica, sans-serif;
     z-index = 1;
+}
+
+#pMainContents{
+    opacity: 0.6;
+    font-size: 36pt;
+    color:black;
 }
 
 #left{
@@ -381,4 +390,5 @@ ul{
 #CopyBtn:hover{
     background-color: blue;
     color : white;
+    cursor:pointer;
 }
