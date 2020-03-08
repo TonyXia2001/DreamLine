@@ -115,7 +115,7 @@ function changeBarDisplay(ratio){
 // 4.
 
 function main(){
-  fetch1();
+    
 }
 
 main();

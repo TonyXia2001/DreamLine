@@ -59,7 +59,7 @@ function showTasks(oTasks, arr, i) {
 function changePage(dir) {
     let oEles = document.getElementsByClassName('divTitle');
     if(currPage + dir < 0 || currPage + dir > maxPage)
-        alert("You  have reach the end!")
+        alert("You have reached the end!")
     else{
         currPage += dir;
         displayBatch(oEles, currPage);

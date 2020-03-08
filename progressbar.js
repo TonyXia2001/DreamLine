@@ -5,16 +5,18 @@ const plus_item = document.getElementById('plus-item');
 const add_task = document.getElementById('add-task');
 var maxone_left = false;
 var maxone_right = false;
-var task_count = 1;
+var task_count = 0;
 var right_height = 4;
 var left_height = 50;
 var bar_count = 0;
 var progressBars = [];
 var currentBar = 0;
+var rendering = false;
 
 plus_item.addEventListener("click", plus_bar);
 
 function plus_bar(){
+<<<<<<< HEAD
   if(maxone_left === false && bar_count <= max_bar){
     maxone_left = true;
     let plus = document.createElement("input"); // create an input box
@@ -56,61 +58,155 @@ function plus_bar(){
     })
     bar_count++;
   }
+=======
+    if(maxone_left === false && bar_count <= max_bar){
+        maxone_left = true;
+
+        // add a progress bar
+        let plus = document.createElement("input");
+        plus.innerHTML = "";
+        plus.id = "bar_"+ bar_count.toString();
+        plus.type = "text";
+        plus.classList.add("plus-bar-left");
+
+        // add a confirm button
+        let button = document.createElement("button");
+        button.innerHTML = "√";
+        button.classList.add("plus-button-left");
+        button.style.marginTop = `${left_height}px`;
+        left_height += 98;
+
+        button.addEventListener("click", ()=>{
+            let confirmedPbar = document.getElementById(`bar_${bar_count}`);
+            button.style.display = "none";
+            confirmedPbar.readOnly = "true";
+            confirmedPbar.classList.remove("plus-button-left");
+            confirmedPbar.classList.add("tab","tab-button");
+            maxone_left = false;
+
+            // create a copy in the progressBars array
+            let t = {};
+            t.title = plus.value;
+            t.tasks = [];
+            progressBars.push(t);
+            console.log(progressBars);
+
+            confirmedPbar.addEventListener("click",()=>{
+                let num = parseInt(plus.id[plus.id.length-1]);
+                currentBar = num;
+                console.log(currentBar);
+                render();
+            })
+            bar_count += 1;
+        })
+        plus.addEventListener("keyup", (e)=>{
+            if (e.keyCode === 13){
+                event.preventDefault();
+                button.click();
+            }
+        })
+
+        goals.appendChild(plus);
+        goals.appendChild(button);
+    }
+  // if press, set maxone_left to true
+>>>>>>> 36efc3742a7b92a7f1251b69c91ef3039be4808a
 }
 
 add_task.addEventListener("click", plus_task);
 function plus_task(e, taskName){
-  if(maxone_right === false){
-    maxone_right = true;
-    let p = document.createElement("input");
-    p.innerHTML = taskName || "";
-    p.type = "text";
-    p.id = "task_"+ task_count.toString();
-    task_count++;
-    p.classList.add("plus-bar-right");
+    if(maxone_right === false){
+        maxone_right = true;
+        let p = document.createElement("input");
+        p.innerHTML = taskName || "";
+        p.type = "text";
+        p.id = "task_"+ task_count.toString();
+        p.classList.add("plus-bar-right");
 
-    let button = document.createElement("button");
-    button.innerHTML = "√";
-    button.classList.add("plus-button-right");
-    button.style.marginTop = `${right_height}px`;
-    right_height += 60;
-    button.addEventListener("click", ()=>{
-      document.getElementById(`task_${task_count}`);
-      button.style.display = "none";
-      p.readOnly = "true";
-      p.classList.remove("plus-button-right");
-      p.classList.add("shorten");
-      maxone_right = false;
-      let des = {"description": p.value};
-      progressBars[currentBar].tasks = progressBars[currentBar].tasks || [];
-      progressBars[currentBar].tasks.push(des);
-      console.log(progressBars);
-      p.addEventListener("click",()=>{
-        p.classList.add("delete");
-      })
-    })
-    tasks.appendChild(p);
-    tasks.appendChild(button);
-    if (taskName != undefined){
-      button.click();
+        let button = document.createElement("button");
+        button.innerHTML = "√";
+        button.classList.add("plus-button-right");
+        button.style.marginTop = `${right_height}px`;
+        right_height += 60;
+
+        tasks.appendChild(p);
+        tasks.appendChild(button);
+
+        button.addEventListener("click", ()=>{
+            // console.log(task_count);
+            let currTask = document.getElementById(`task_${task_count}`);
+            button.style.display = "none";
+            currTask.readOnly = "true";
+            currTask.classList.remove("plus-button-right");
+            currTask.classList.add("shorten");
+            maxone_right = false;
+            if (!rendering) {
+                let des = {"description": currTask.value};
+                progressBars[currentBar].tasks.push(des);
+            }
+            // console.log(progressBars);
+            currTask.addEventListener("click",()=>{
+                currTask.classList.add("delete");
+                let task_id = parseInt(currTask.id.split("_")[1]);
+                progressBars[currentBar].tasks[task_id].completion = true;
+                progressBars[currentBar].completed++;
+                changeBarDisplay(progressBars[currentBar].completed /
+                    progressBars[currentBar].tasks.length * 100);
+            })
+            changeBarDisplay(progressBars[currentBar].completed /
+                progressBars[currentBar].tasks.length * 100);
+            void document.offsetTop;
+            task_count++;
+        })
+
+        if (taskName != undefined){
+            document.getElementById(`task_${task_count}`).value = taskName;
+            if (progressBars[currentBar].tasks[task_count].completion) {
+                document.getElementById(`task_${task_count}`).classList.add("delete");
+            }
+            button.click();
+        }
+        // console.log(p.offsetTop);
+        p.addEventListener("keyup", (e)=>{
+            if (e.keyCode === 13){
+                event.preventDefault();
+                button.click();
+            }
+        })
     }
-    // console.log(p.offsetTop);
-    p.addEventListener("keyup", (e)=>{
-      if (e.keyCode === 13){
-        event.preventDefault();
-        button.click();
-      }
-    })
-  }
 }
 
 function render(){
-  tasks.innerHTML = "";
-  let load = progressBars[currentBar];
-  for (var t of load.tasks){
-      plus_task("asdf",t.description);
-  }
+    rendering = true;
+
+    // reset useful variables
+    tasks.innerHTML = "";
+    task_count = 0;
+    right_height = 4;
+    let load = progressBars[currentBar];
+
+    // count completed
+    var completed = 0;
+    for (var t of load.tasks){
+        if (t.completion) {
+            completed++;
+        }
+        console.log(t);
+        plus_task("asdf",t.description);
+    }
+    progressBars[currentBar].completed = completed;
+
+    // set progress bar
+    if (completed == 0) {
+        changeBarDisplay(0);
+    } else {
+        changeBarDisplay(completed/load.tasks.length * 100);
+    }
+
+    // finish rendering
+    rendering = false;
 }
+<<<<<<< HEAD
  let clickUserIcon = document.getElementById('userMenuBlock').addEventListener('mouseover', (e)=>{
      let oUserMenu = document.getElementById('userMenu');
      startMove(oUserMenu, {}, 10, function () {
@@ -133,3 +229,20 @@ function render(){
          window.location.href = "./search.html";
      }
  })
+=======
+let clickUserIcon = document.getElementById('userMenuBlock').addEventListener('mouseover', (e)=>{
+    let oUserMenu = document.getElementById('userMenu');
+    startMove(oUserMenu, {}, 10, function () {
+        startMoveWH(oUserMenu, {'height': 20, 'width': 8}, 10);
+    })
+    e.stopPropagation();
+})
+
+let OffUserIcon = document.getElementById('userMenuBlock').addEventListener('mouseout', (e)=>{
+    let oUserMenu = document.getElementById('userMenu');
+    startMove(oUserMenu, {}, 10, function () {
+        startMoveWH(oUserMenu, {'height': 0, 'width': 0}, 10);
+    })
+    e.stopPropagation();
+})
+>>>>>>> 36efc3742a7b92a7f1251b69c91ef3039be4808a
