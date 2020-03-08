@@ -67,6 +67,7 @@ async function login(user) {
             'authorization': `bearer ${token}`
         };
         window.sessionStorage.setItem("authorizedHeader", JSON.stringify(headerWithToken));
+        window.sessionStorage["username"] = user.username;
         window.location.href = "./progressbar.html";
     } catch (e) {
         alert("Invalid credentials!");

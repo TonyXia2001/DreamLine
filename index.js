@@ -113,7 +113,7 @@ document.getElementById('loginSignup').addEventListener('click', (e) => {
 })
 document.getElementById('searchInput').addEventListener('keyup', (e) => {
     if (e.keyCode == 13) {
-        window.location.href = "./search.html";
         window.sessionStorage["query"] = document.getElementById('searchInput').value;
+        window.location.href = "./search.html";
     }
 })
