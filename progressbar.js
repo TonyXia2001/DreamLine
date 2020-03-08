@@ -1,16 +1,29 @@
 const max_bar = 5;
+const goals = document.getElementById('goals');
+const tasks = document.getElementById('tasks');
 var maxone_left = false;
 var maxone_right = false;
 var task_count = 1;
 var bar_count = 1;
 var right_height = 4;
-var left_height = 48;
+var left_height = 50;
 var bar_count = 1;
-var color = ["#ff0000","#00ff00","#fcba03","#ff00ff","#00ffff"];
+var progressBars = [];
+var currentBar = 0;
+
+// var color = ["#ff0000","#00ff00","#fcba03","#ff00ff","#00ffff"];
+
+// [
+//   {
+//     title: "DSFsd",
+//     tasks: [
+//       {description: "dsfsd"},
+//       {description: "dsdfs"}
+//     ]
+//   }
+// ]
 
 // var taskNo = 1; use this to keep track of tasks number;
-const goals = document.getElementById('goals');
-const tasks = document.getElementById('tasks');
 
 function plus(){
   if(maxone_left === false && bar_count <= max_bar){
@@ -21,24 +34,22 @@ function plus(){
     plus.type = "text";
     plus.classList.add("plus-bar-left");
 
-    let number = document.createElement("div");
-    number.innerText = bar_count;
-    number.classList.add("number-box");
-    number.style.background = color[2];
-    console.log(bar_count);
+    // let tab = document.createElement("div");
+    // tab.innerText = bar_count;
+    // console.log(bar_count);
 
     let button = document.createElement("button");
     button.innerHTML = "√";
     button.classList.add("plus-button-left");
-    button.style.background = color[2];
     button.style.marginTop = `${left_height}px`;
-    number.style.marginTop = `${left_height}px`;
-    left_height += 78;
+    // tab.style.marginTop = `${left_height}px`;
+    left_height += 98;
     button.addEventListener("click", ()=>{
       document.getElementById(`bar_${bar_count}`);
-      goals.append(number);
       button.style.display = "none";
       plus.readOnly = "true";
+      plus.classList.remove("plus-button-left");
+      plus.classList.add("tab","tab-button");
       maxone_left = false;
     })
 
@@ -54,10 +65,6 @@ function plus(){
     bar_count++;
   }
   // if press, set maxone_left to true
-}
-
-function confirm_left(button){
-
 }
 
 function plus_task(){
@@ -79,12 +86,16 @@ function plus_task(){
       document.getElementById(`task_${task_count}`);
       button.style.display = "none";
       p.readOnly = "true";
+      p.classList.remove("plus-button-right");
+      p.classList.add("shorten");
       maxone_right = false;
+      p.addEventListener("click",()=>{
+        p.classList.add("delete");
+      })
     })
     tasks.appendChild(p);
     tasks.appendChild(button);
-    console.log(p.offsetTop);
-
+    // console.log(p.offsetTop);
     p.addEventListener("keyup", (e)=>{
       if (e.keyCode === 13){
         event.preventDefault();
