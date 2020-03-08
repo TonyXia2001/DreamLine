@@ -281,6 +281,7 @@ ul{
   height: 2.5vw;
   outline: none;
   background: radial-gradient(255.62% 50% at 50% 50%, rgba(47, 0, 148, 0.43) 0%, rgba(15, 0, 104, 0.53) 100%);
+  border: 1px;
   opacity: 0.8;
 }
 
@@ -404,6 +405,10 @@ ul{
   border: 1px solid silver;
   width: 3vw;
   height: 3vw;
+}
+
+.disappear{
+  display: none;
 }
 
 @keyframes shorten-right {

@@ -2,6 +2,21 @@
 // var tasks = getElementById("tasks");
 var progress;
 var bar_status = document.getElementsByClassName("bar-status")
+let username = window.sessionStorage["username"];
+console.log(username);
+console.log(window.sessionStorage["authorizedHeader"]);
+// username
+// title
+// tasks
+// [
+//   {
+//     title: "DSFsd",
+//     tasks: [
+//       {description: "dsfsd"},
+//       {description: "dsdfs"}
+//     ]
+//   }
+// ]
 
 function fetch1(){
   fetch('https://dreamline-270317.appspot.com/users/all')
@@ -97,11 +112,10 @@ function changeBarDisplay(ratio){
 // 1. extract all the bars from data base
 // 2. make new bars according to the statistics
 // 3. Make correct layout
-// 4. 
+// 4.
 
 function main(){
   fetch1();
-  console.log(bar_status);
 }
 
 main();
