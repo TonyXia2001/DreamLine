@@ -16,49 +16,6 @@ var rendering = false;
 plus_item.addEventListener("click", plus_bar);
 
 function plus_bar(){
-<<<<<<< HEAD
-  if(maxone_left === false && bar_count <= max_bar){
-    maxone_left = true;
-    let plus = document.createElement("input"); // create an input box
-    plus.innerHTML = "";
-    plus.id = "bar_"+ bar_count.toString(); // give it a name by index starting from 0
-    plus.type = "text";
-    plus.classList.add("plus-bar-left");
-    let button = document.createElement("button");
-    button.innerHTML = "√";
-    button.classList.add("plus-button-left");
-    button.style.marginTop = `${left_height}px`;
-    left_height += 98; // make button the same height with the input line
-    button.addEventListener("click", ()=>{
-      document.getElementById(`bar_${bar_count}`);
-      button.style.display = "none";
-      plus.readOnly = "true"; // when calling the button, make the text readOnly
-      plus.classList.remove("plus-button-left"); // remove the left button
-      plus.classList.add("tab","tab-button"); // add a tab for future selection
-      maxone_left = false;
-      let t = {}; // task
-      t.title = plus.value; // set title to the text of plus(taskName)
-      progressBars.push(t);
-      plus.addEventListener("click",()=>{
-        let num = parseInt(plus.id[plus.id.length-1]);
-        currentBar = num;
-        render();
-        bar_count += 1;
-      })
-    })
-
-    goals.append(plus);
-    goals.append(button);
-    console.log(plus.offsetTop);
-    plus.addEventListener("keyup", (e)=>{
-      if (e.keyCode === 13){
-        event.preventDefault();
-        button.click();
-      }
-    })
-    bar_count++;
-  }
-=======
     if(maxone_left === false && bar_count <= max_bar){
         maxone_left = true;
 
@@ -98,6 +55,7 @@ function plus_bar(){
                 render();
             })
             bar_count += 1;
+            // add_bar_to_server(t);
         })
         plus.addEventListener("keyup", (e)=>{
             if (e.keyCode === 13){
@@ -109,8 +67,6 @@ function plus_bar(){
         goals.appendChild(plus);
         goals.appendChild(button);
     }
-  // if press, set maxone_left to true
->>>>>>> 36efc3742a7b92a7f1251b69c91ef3039be4808a
 }
 
 add_task.addEventListener("click", plus_task);
@@ -152,11 +108,13 @@ function plus_task(e, taskName){
                 progressBars[currentBar].completed++;
                 changeBarDisplay(progressBars[currentBar].completed /
                     progressBars[currentBar].tasks.length * 100);
+                // update_tasks_to_server(currentBar);
             })
             changeBarDisplay(progressBars[currentBar].completed /
                 progressBars[currentBar].tasks.length * 100);
             void document.offsetTop;
             task_count++;
+            // update_tasks_to_server(currentBar);
         })
 
         if (taskName != undefined){
@@ -206,7 +164,7 @@ function render(){
     // finish rendering
     rendering = false;
 }
-<<<<<<< HEAD
+
  let clickUserIcon = document.getElementById('userMenuBlock').addEventListener('mouseover', (e)=>{
      let oUserMenu = document.getElementById('userMenu');
      startMove(oUserMenu, {}, 10, function () {
@@ -229,20 +187,40 @@ function render(){
          window.location.href = "./search.html";
      }
  })
-=======
-let clickUserIcon = document.getElementById('userMenuBlock').addEventListener('mouseover', (e)=>{
-    let oUserMenu = document.getElementById('userMenu');
-    startMove(oUserMenu, {}, 10, function () {
-        startMoveWH(oUserMenu, {'height': 20, 'width': 8}, 10);
-    })
-    e.stopPropagation();
-})
 
-let OffUserIcon = document.getElementById('userMenuBlock').addEventListener('mouseout', (e)=>{
-    let oUserMenu = document.getElementById('userMenu');
-    startMove(oUserMenu, {}, 10, function () {
-        startMoveWH(oUserMenu, {'height': 0, 'width': 0}, 10);
-    })
-    e.stopPropagation();
-})
->>>>>>> 36efc3742a7b92a7f1251b69c91ef3039be4808a
+async function add_bar_to_server(param) {
+    var header = window.sessionStorage['authorizedHeader'];
+    var body = {
+        username: window.sessionStorage['username'],
+        title: param.title,
+        tasks: []
+    }
+    try {
+        let response = await fetch('https://dreamline-270317.appspot.com/users/progress', {
+            method: 'POST',
+            body: JSON.stringify(body),
+            header: header
+        });
+    } catch (e) {
+        alert("failed to update to server");
+        window.location.href = ".";
+    }
+}
+
+async function update_tasks_to_server(barid) {
+    var header = window.sessionStorage["authorizedHeader"];
+    var body = {
+        tasks: progressBars[barid].tasks,
+        username: window.sessionStorage["username"]
+    };
+    try {
+        fetch(`https://dreamline-270317.appspot.com/users/${barid}/tasks`, {
+            method: 'PUT',
+            header: header,
+            body: body
+        });
+    } catch (e) {
+        alert("error updating tasks");
+        window.location.href = ".";
+    }
+}
