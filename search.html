@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="search.css">
+    <link href="https://fonts.googleapis.com/css?family=Asap:400i,700i&display=swap" rel="stylesheet">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="makeChange.js" charset="utf-8"></script>
+    <script src="search.js" charset="utf-8"></script>
+    <title>progress bar</title>
+  </head>
+  <body>
+    <div class="nav-bar">
+      <div id = "userMenuBlock">
+          <span id = "user-icon" class="icon fas fa-user"></span>
+          <div id = "userMenu">
+              <ul>
+                  <a class = 'aMenu' id='am1' href="index.html">Main Page</a>
+                  <a class = 'aMenu' id='am2' href="#">Personal</a>
+                  <a class = 'aMenu' id='am3' href="#">Achievement</a>
+                  <a class = 'aMenu' id='am4' href="about:blank">Log Out</a>
+              </ul>
+          </div>
+      </div>
+      <span class="search-bar"><input type="text" class="searchTerm" placeholder="What are you looking for?">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button></span>
+
+    </div>
+
+    <section class = "bar-page">
+        <div class = "mainContents">
+            <button id=CopyBtn>Copy to my repository</button>
+        </div>
+        <div class="leftColumn">
+            <div id="ResultTitle">Search Results:</div>
+            <button id=left onclick = changePage(-1)></button>
+            <button id=right onclick = changePage(1)></button>
+            <div id=pageNum>1</div>
+        </div>
+    </section>
+
+  </body>
+</html>

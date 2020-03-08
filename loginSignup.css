@@ -16,6 +16,7 @@
     top: 15vh;
     left: 30vw;
     background-color: white;
+    border-radius: 20px;
     opacity: 0;
     z-index: 3;
 }
@@ -28,9 +29,7 @@
     left: 20vw;
 }
 
-#changeToLogIn:hover, #changeToSignUp:hover, #submitBtn:hover{
-    background-color: rgba(154, 18, 179, 1);
-}
+
 
 .LiSuIp{
     padding-left: 10px;
@@ -74,6 +73,10 @@
     font-size: 18pt;
 }
 
+#changeToLogIn:hover, #changeToSignUp:hover, #submitBtn:hover{
+    background-color: rgba(154, 18, 179, 1);
+    cursor: pointer;
+}
 
 #LiSuFlex {
     position:relative;
