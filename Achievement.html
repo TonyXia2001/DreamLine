@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="Achievement.css">
+    <link href="https://fonts.googleapis.com/css?family=Asap:400i,700i&display=swap" rel="stylesheet">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="makeChange.js" charset="utf-8" defer></script>
+    <script src="Achievement.js" charset="utf-8" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="nav-bar">
+      <div id = "userMenuBlock">
+          <span id = "user-icon" class="icon fas fa-user"></span>
+          <div id = "userMenu">
+              <ul>
+                  <a class = 'aMenu' id='am1' href=".">Main Page</a>
+                  <a class = 'aMenu' id='am2' href="progressbar.html">Personal</a>
+                  <a class = 'aMenu' id='am3' href="search.html">Search</a>
+                  <a class = 'aMenu' id='am4' href="." onclick = logout()>Log Out</a>
+              </ul>
+          </div>
+      </div>
+      <span class="search-bar"><input type="text" class="searchTerm" id="searchTerm" placeholder="What are you looking for?">
+        <button type="submit" class="searchButton" id="searchButton">
+          <i class="fa fa-search"></i>
+        </button></span>
+    </div>
+    <div id="main">
+        <div id = mainimg></div>
+        <div id = AchiTitle>Personal Achievement</div>
+        <div id=content>
+            <div class="achiContent">Hey</div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -78,7 +78,8 @@ function displayData(result) {
     }
     maxPage = Math.floor(oEles.length/7);
     displayBatch(oEles, 0);
-    showTasks(oTasks, result, 0);
+    if(oTasks.length != 0)
+        showTasks(oTasks, result, 0);
 }
 
 async function searchAndDisplay(txt) {
@@ -142,6 +143,10 @@ let OffUserIcon = document.getElementById('userMenuBlock').addEventListener('mou
 
 
 document.getElementById('CopyBtn').addEventListener('click', async ()=>{
+    if(selectedTitleAndTasks.title == null){
+        alert("Please select a progress bar first!");
+        return;
+    }
     var uName = window.sessionStorage["username"];
     var body = {
         username: uName,
@@ -149,9 +154,6 @@ document.getElementById('CopyBtn').addEventListener('click', async ()=>{
         tasks: selectedTitleAndTasks.tasks
     };
     var header = window.sessionStorage["authorizedHeader"];
-    console.log(uName);
-    console.log(header);
-    console.log(body);
     try {
         var response = await fetch(`https://dreamline-270317.appspot.com/progress`, {
             method: 'POST',

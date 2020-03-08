@@ -1,0 +1,175 @@
+html {
+  overflow-x: hidden;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+body{
+
+}
+
+/* search bar upper right */
+.search-bar {
+  position:absolute;
+  top: 1.7vh;
+  width: 65vw;
+  margin-top: 1.5vh;
+  display: flex;
+  left: 75vw;
+}
+.searchTerm {
+  width: 30%;
+  border: 3px solid #00B4CC;
+  border-right: none;
+  padding: 10px;
+  height: 5vh;
+  border-radius: 16px 0 0 16px;
+  font-size: 13px;
+  outline: none;
+  color: #9DBFAF;
+}
+.searchButton {
+  width: 35px;
+  height: 5vh;
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 16px 16px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+.body{
+  margin: 0;
+}
+.top{
+  position: absolute;
+  top: 1.5vh;
+  background: rgba(40,46,63,0.9);
+}
+
+#user-icon{
+  position:absolute;
+  left:1.5vw;
+  padding: 1vw;
+  top:1.7vh;
+  border: 0.13vw solid black;
+  border-radius: 50%;
+  background-color: white;
+}
+#user-icon:hover{
+  position: absolute;
+  cursor:pointer;
+}
+
+#userMenu{
+    height:0vh;
+    width: 0vw;
+    background: rgba(198, 231, 245, 0.95);
+    padding-top: 10px;
+    line-height: 4vh;
+    position: absolute;
+    border-radius: 1vw;
+    left: 4vw;
+    top: 7vh;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.aMenu{
+    position: absolute;
+    color: black;
+    left:1vw;
+    text-align: left;
+    font-size: 1.1vw;
+}
+
+#am1{top: 0.5vh;}
+#am2{top: 5vh;}
+#am3{top: 9.5vh;}
+#am4{top: 14vh;}
+
+.nav-bar{
+  background: linear-gradient(358.57deg, rgba(235, 50, 239, 0.405) 1.43%, rgba(210, 66, 234, 0.511502) 30.52%, rgba(130, 87, 252, 0.555412) 64.76%, rgba(123, 136, 242, 0.75) 98.1%);
+  position: absolute;
+  height: 11vh;
+  width: 100%;
+  border-bottom: 1px solid black;
+  top: 0;
+}
+
+.rightColumn{
+  position: absolute;
+  left:25vw;
+  top:11vh;
+  width:80vw;
+  height:89vh;
+}
+
+.leftColumn{
+  position:absolute;
+  top:11vh;
+  width:20vw;
+  height:89vh;
+  border-right: 1px solid black;
+background: linear-gradient(295.36deg, rgba(0, 148, 255, 0.63) 37.23%, rgba(6, 47, 170, 0.47) 68.87%, rgba(92, 51, 255, 0.75) 99.11%);
+}
+
+#main{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 11vh;
+    left: 0vw;
+}
+
+#mainimg{
+    position: absolute;
+    width: 100vw;
+    height: 200vh;
+    top: -1vh;
+    left: -1vw;
+    background-image: url('bgImage/Achievement.svg');
+    background-size: cover;
+    opacity: 0.5;
+}
+
+#AchiTitle{
+    position: absolute;
+    width: 100vw;
+    height: 16vh;
+    top: 0vh;
+    left: 0vw;
+    text-align: center;
+    font-weight: bold;
+    font-size: 5vw;
+    font-family: "Courier New", Courier, monospace;
+    background: rgba(255,255,255,0.4);
+}
+
+#content{
+    width: 100vw;
+    height: 200vh;
+    top: 100vh;
+    left: 0vw;
+}
+
+
+.achiContent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 70vw;
+    height: 20vh;
+    left: 15vw;
+    top: 30vh;
+    font-size: 3vw;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    text-align: center;
+    background-color: white;
+}
+
+.achiContent:hover{
+    color:white;
+}
