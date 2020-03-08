@@ -41,8 +41,7 @@
             </button>
             <div id=searchBar>
                 <input id = 'searchInput' type="text" placeholder="Search">
-                <div onmouseover = 'btnHover(this)' onmouseout = 'btnUnhover(this)'
-                    onclick = 'changeStatus(document.getElementById("searchInput"), "inline-block")'>
+                <div onclick = 'changeStatus(document.getElementById("searchInput"), "block")'>
                     <img id=searchBtn src="bgImage/searchIcon.svg" alt="x">
                 </div>
             </div>
@@ -62,58 +61,66 @@
                     A place for dream chasers, a platform for visionary planners, a driving force for bold advancers, XXX is home for the new generation of future-planning. With our dynamic progress bars and unique sharing features, one can fully immerse in setting their goals, keeping track of their progress, and learning from the experience of others.
                 </div>
             </section>
-            <section id = 'features'></section>
-            <div id = FeatureTitle>Why XXX?</div>
-            <div class = feature id=feature1
-                 onmouseover = 'displayBlock(this, 0, -1)'
-                 onmouseout = 'displayBlock(this, 0, 1)'>
-                 <div class = featureBG id=featureBG1></div>
-                 <p class = featureP>
-                    Future Planner
-                     <br>
-                     Allowing users to plan out their future path with ease.
-                 </p>
-            </div>
-            <div class = feature id=feature2
-                 onmouseover = 'displayBlock(this, 1, -1)'
-                 onmouseout = 'displayBlock(this, 1, 1)'>
-                 <div class = featureBG id=featureBG2></div>
-                 <p class = featureP>
-                    Standing on shoulder of giants
-                    <br>
-                    Learning from others’ wisdom, users are allowed to search others’ plan
-                </p>
-            </div>
-            <div class = feature id=feature3
-                 onmouseover = 'displayBlock(this, 2, -1)'
-                 onmouseout = 'displayBlock(this, 2, 1)'>
-                <div class = featureBG id=featureBG3></div>
-                <p class = featureP>
-                    Decision is fun
-                    <br>
-                    Utilizing cutting-edge web technology, makes planning no longer a tedious task.
-                </p>
-            </div>
-            <div class = feature id=feature4
-                 onmouseover = 'displayBlock(this, 3, -1)'
-                 onmouseout = 'displayBlock(this, 3, 1)'>
-                <div class = featureBG id=featureBG4></div>
-                <p class = featureP>
-                    Better than just to-do
-                    <br>
-                    Conveniently make future decisions and visualize your progress
-                </p>
-            </div>
-            <section id = conclusion>
+            <section id = 'features'>
+                <div id = FeatureTitle>Why XXX?</div>
+                <div id="featureDisplay">
+                    <div class = feature id=feature1>
+                        <div class="featureBG" id= featureBG1>
+
+                        </div>
+
+                        <div class="feature-short">
+                            Easy to use
+                        </div>
+                        <div class="feature-long">
+                            Allowing users to plan out their future path with ease.
+                        </div>
+                    </div>
+                    <div class = feature id="feature2">
+                        <div class="featureBG" id= featureBG2>
+
+                        </div>
+
+                        <div class="feature-short">
+                            Learn from others
+                        </div>
+                        <div class="feature-long">
+                            Learning from others’ wisdom, users are allowed to search others’ plan
+                        </div>
+                    </div>
+                    <div class = feature id=feature3>
+                        <div class="featureBG" id= featureBG3>
+
+                        </div>
+                        <div class="feature-short">
+                            fun and interactive
+                        </div>
+                        <div class="feature-long">
+                            Utilizing cutting-edge web technology, makes planning no longer a tedious task.
+                        </div>
+                    </div>
+                    <div class = feature id=feature4>
+                        <div class="featureBG" id= featureBG4>
+
+                        </div>
+                        <div class="feature-short">
+                            More than just a to-do list
+                        </div>
+                        <div class="feature-long">
+                            Conveniently make future decisions and visualize your progress
+                        </div>
+                    </div>
+                </div>
             </section>
-            <footer id = 'footer'>
+
+            <section id = conclusion>
                 <div>
                     The future belongs to those who believe in the beauty of their dreams. Make it reality with XXX.
                 </div>
                 <button id="btmSignupBtn">
                     Sign Up Now
                 </button>
-            </footer>
+            </section>
         </section>
     </article>
 </body>

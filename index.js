@@ -73,7 +73,7 @@ document.getElementById('btmSignupBtn').addEventListener('click', (e) => {
 function switchLiSuMethod(iThis, iOther){
     var oThisBtn = document.getElementById(iThis);
     var oOtherBtn = document.getElementById(iOther);
-    oThisBtn.style.background = 'rgba(154, 18, 179, 0.5)';
+    oThisBtn.style.background = 'rgba(154, 18, 179, 1)';
     oOtherBtn.style.background = 'rgba(255, 255, 255, 1)';
 
     var oUNameP = document.getElementById('uNameP');
@@ -111,3 +111,8 @@ document.addEventListener("click", (e)=>{
 document.getElementById('loginSignup').addEventListener('click', (e) => {
     e.stopPropagation();
 })
+// document.getElementById('searchInput').addEventListener('keydown', (e) => {
+    //     if (e.keyCode == 13) {
+        //         window.location.href = "./search.html";
+        //     }
+        // })
