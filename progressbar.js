@@ -55,6 +55,7 @@ function plus_bar(){
                 render();
             })
             bar_count += 1;
+            // add_bar_to_server(t);
         })
         plus.addEventListener("keyup", (e)=>{
             if (e.keyCode === 13){
@@ -66,7 +67,6 @@ function plus_bar(){
         goals.appendChild(plus);
         goals.appendChild(button);
     }
-  // if press, set maxone_left to true
 }
 
 add_task.addEventListener("click", plus_task);
@@ -108,11 +108,13 @@ function plus_task(e, taskName){
                 progressBars[currentBar].completed++;
                 changeBarDisplay(progressBars[currentBar].completed /
                     progressBars[currentBar].tasks.length * 100);
+                // update_tasks_to_server(currentBar);
             })
             changeBarDisplay(progressBars[currentBar].completed /
                 progressBars[currentBar].tasks.length * 100);
             void document.offsetTop;
             task_count++;
+            // update_tasks_to_server(currentBar);
         })
 
         if (taskName != undefined){
@@ -177,3 +179,40 @@ let OffUserIcon = document.getElementById('userMenuBlock').addEventListener('mou
     })
     e.stopPropagation();
 })
+
+async function add_bar_to_server(param) {
+    var header = window.sessionStorage['authorizedHeader'];
+    var body = {
+        username: window.sessionStorage['username'],
+        title: param.title,
+        tasks: []
+    }
+    try {
+        let response = await fetch('https://dreamline-270317.appspot.com/users/progress', {
+            method: 'POST',
+            body: JSON.stringify(body),
+            header: header
+        });
+    } catch (e) {
+        alert("failed to update to server");
+        window.location.href = ".";
+    }
+}
+
+async function update_tasks_to_server(barid) {
+    var header = window.sessionStorage["authorizedHeader"];
+    var body = {
+        tasks: progressBars[barid].tasks,
+        username: window.sessionStorage["username"]
+    };
+    try {
+        fetch(`https://dreamline-270317.appspot.com/users/${barid}/tasks`, {
+            method: 'PUT',
+            header: header,
+            body: body
+        });
+    } catch (e) {
+        alert("error updating tasks");
+        window.location.href = ".";
+    }
+}
