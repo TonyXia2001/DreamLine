@@ -1,0 +1,384 @@
+html {
+  overflow-x: hidden;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+body{
+
+}
+
+/* search bar upper right */
+.search-bar {
+  position:absolute;
+  top: 1.7vh;
+  width: 65vw;
+  margin-top: 1.5vh;
+  display: flex;
+  left: 75vw;
+}
+.searchTerm {
+  width: 30%;
+  border: 3px solid #00B4CC;
+  border-right: none;
+  padding: 10px;
+  height: 5vh;
+  border-radius: 16px 0 0 16px;
+  font-size: 13px;
+  outline: none;
+  color: #9DBFAF;
+}
+.searchButton {
+  width: 35px;
+  height: 5vh;
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 16px 16px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+.body{
+  margin: 0;
+}
+.top{
+  position: absolute;
+  top: 1.5vh;
+  background: rgba(40,46,63,0.9);
+}
+
+#user-icon{
+  position:absolute;
+  left:1.5vw;
+  padding: 1vw;
+  top:1.7vh;
+  border: 0.13vw solid black;
+  border-radius: 50%;
+  background-color: white;
+}
+#user-icon:hover{
+  position: absolute;
+  cursor:pointer;
+}
+
+#userMenu{
+    height:0vh;
+    width: 0vw;
+    background-color: white;
+    padding-top: 10px;
+    line-height: 4vh;
+    position: absolute;
+    border-radius: 1vh;
+    left: 4vw;
+    top: 7vh;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.aMenu{
+    position: absolute;
+    left:1vw;
+    text-align: left;
+    font-size: 1.1vw;
+}
+
+#am1{top: 0.5vh;}
+#am2{top: 5vh;}
+#am3{top: 9.5vh;}
+#am4{top: 14vh;}
+
+.nav-bar{
+  background: linear-gradient(351.84deg, #0085FF 10.18%, rgba(6, 47, 170, 0.658744) 62.24%, rgba(80, 51, 255, 0.76) 92.42%);
+  position: absolute;
+  height: 11vh;
+  width: 100%;
+  border-bottom: 1px solid black;
+  top: 0;
+}
+
+.progress{
+  margin: 0 auto;
+  margin-top: 10vh;
+  width: 65vw;
+  left: 60vw;
+  right: 0;
+  height: 10vh;
+  border-radius: 15px 15px 15px 15px;
+  height: 7vh;
+  border: 2px solid silver;
+}
+
+.bar-list{
+  margin-top: 5vh;
+  margin-left: 10vw;
+  left: 10vw;
+}
+
+#task-list{
+  position: absolute;
+  margin-top: 5vh;
+  height: 100%;
+  width: 100%;
+}
+.rightColumn{
+  position: absolute;
+  left:25vw;
+  top:11vh;
+  width:80vw;
+  height:89vh;
+}
+
+.leftColumn{
+  position:absolute;
+  top:11vh;
+  width:20vw;
+  height:89vh;
+  border-right: 1px solid black;
+background: linear-gradient(295.36deg, rgba(0, 148, 255, 0.63) 37.23%, rgba(6, 47, 170, 0.47) 68.87%, rgba(92, 51, 255, 0.75) 99.11%);
+}
+
+/* five progresses */
+#one{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: rgba(255, 0, 0 ,1) !important;
+}
+
+#two{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: rgba(255, 255, 0, 1) !important;
+}
+#three{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: rgba(0, 255, 0, 1) !important;
+}
+#four{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: rgba(255, 0, 255, 1) !important;
+}
+#five{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: rgba(255, 155, 0, 1) !important;
+}
+.progress-bar:hover{
+  opacity: 0.7;
+}
+.progress-content{
+  font-family: 'Asap', sans-serif;
+  color: black;
+}
+ul{
+  text-align: center;
+  border-bottom: 1px;
+}
+.ls-item{
+  margin-top: 2vh;
+  text-align: center;
+}
+#plus-task{
+  width: 100%;
+  text-align: center;
+}
+#goals{
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#tasks{
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#add-task{
+  display: inline-block;
+  margin-top: 5vh;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  outline: none;
+ filter: invert(10%) sepia(87%) saturate(6609%) hue-rotate(349deg) brightness(127%) contrast(137%);
+}
+
+
+#plus-item{
+  margin-top: 5vh;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  background: pink;
+  font-size: 20px;
+  border-radius: 50%;
+  border: solid 1px black;
+  outline: none;
+  background-color: rgba(255, 0, 0, 1);
+}
+#plus-item:hover{
+  background-color: rgba(255, 0, 0, 0.6);
+}
+
+#add-task:hover{
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+
+/* These are for the added items */
+.plus-bar-left{
+  font-family: 'Asap', sans-serif;
+  margin-top: 3vh;
+  width : 50%;
+  border: none;
+  border-bottom: 1px solid silver;
+  outline-width: 0;
+}
+
+.plus-bar-right{
+  font-family: 'Asap', sans-serif;
+  margin-top: 5vh;
+  width : 65%;
+  border: none;
+  border-bottom: 1px solid silver;
+  outline-width: 0;
+  text-align: center;
+}
+
+.plus-button-left{
+  position: absolute;
+  margin-top: 3vh;
+  border-radius: 50%;
+  left: 1.5vw;
+  width: 10%;
+  outline: none;
+  background-color: rgba(255, 0, 0, 1);
+}
+
+.plus-button-right{
+  position: absolute;
+  margin-top: 2vh;
+  border-radius: 50%;
+  left: 8vw;
+  width: 3vw;
+  height: 3vw;
+  outline: none;
+  background: rgba(255, 0, 0, 1);
+}
+
+#ResultTitle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0vw;
+    width: 20vw;
+    height: 9vh;
+    top: 0vw;
+    background: rgba(255,255,255,0.3);
+    text-align: center;
+    font-size: 2vw;
+    font-weight: bold;
+    font-family: "Arial Black", Gadget, sans-serif;
+}
+
+.divTitle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0vw;
+    width: 20vw;
+    height: 10vh;
+    top: 0vw;
+    background: rgba(0,0,0,0);
+    text-align: center;
+    font-size: 2vw;
+    font-weight: bold;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+.divTitle:hover{
+    background: rgba(156, 238, 255, 0.3);
+}
+
+.mainContents{
+    position: absolute;
+    left:20vw;
+    top: 11vh;
+    width: 80vw;
+    height: 89vh;
+    background: rgba(230, 230, 230, 1);
+}
+
+.mainTask{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+    height: 50vh;
+    left: 15vw;
+    font-size: 3vw;
+    font-weight: bold;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    z-index = 1;
+}
+
+#left{
+    position: absolute;
+    background-image: url('bgImage/left.svg');
+    border-color: black;
+    top: 84vh;
+    left: 1vw;
+    width: 2vw;
+    height: 2vw;
+}
+
+#right{
+    position: absolute;
+    background-image: url('bgImage/right.svg');
+    border-color: black;
+    top: 84vh;
+    left: 17vw;
+    width: 2vw;
+    height: 2vw;
+}
+
+#pageNum{
+    position: absolute;
+    background: rgba(0,0,0,0);
+    top: 83.3vh;
+    left: 9.5vw;
+    width: 3vw;
+    height: 2vw;
+    font-size: 18pt;
+}
+
+#CopyBtn{
+    position: absolute;
+    width: 16vw;
+    height: 8vh;
+    left: 32vw;
+    top: 80vh;
+    background: rgba(0,0,0,0);
+    border-color: blue;
+    font-size: 2.5vh;
+    font-weight: bold;
+    color: blue;
+    border-width: 1px;
+}
+
+#CopyBtn:hover{
+    background-color: blue;
+    color : white;
+}
