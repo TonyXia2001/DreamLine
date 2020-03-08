@@ -33,9 +33,7 @@
 }
 
 .LiSuIp{
-    position: absolute;
     padding-left: 10px;
-    left: 10vw;
     width: 20vw;
     height: 6vh;
     font-size: 20pt;
@@ -44,36 +42,27 @@
 }
 
 #usernameIp{
-    top: 20vh;
 }
 
 #uNameP{
-    font-size: 20pt;
-    position: absolute;
-    top: 18vh;
-    left: 2vh;
+    font-size: 15pt;
+    margin: 10px;
 }
 
 #passwordIp{
-    top: 33vh;
 }
 
 #pWordP{
-    font-size: 20pt;
-    position: absolute;
-    top: 31vh;
-    left: 2vh;
+    font-size: 15pt;
+    margin: 10px;
 }
 
 #conPwordP{
-    font-size: 20pt;
-    position: absolute;
-    top: 42vh;
-    left: 2vh;
+    font-size: 15pt;
+    margin: 10px;
 }
 
 #confirmIp{
-    top: 46vh;
 }
 
 #submitBtn{
@@ -82,8 +71,17 @@
     background-color: white;
     border-color: black;
     border-width: 1px;
-    position: absolute;
-    top: 57vh;
-    left: 12vw;
     font-size: 18pt;
+}
+
+
+#LiSuFlex {
+    position:relative;
+    top: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    height: calc(100% - 10vh);
+    align-items: center;
 }

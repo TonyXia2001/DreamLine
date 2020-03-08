@@ -93,3 +93,19 @@ function plus_task(){
     })
   }
 }
+
+ let clickUserIcon = document.getElementById('userMenuBlock').addEventListener('mouseover', (e)=>{
+     let oUserMenu = document.getElementById('userMenu');
+     startMove(oUserMenu, {}, 10, function () {
+         startMoveWH(oUserMenu, {'height': 20, 'width': 8}, 10);
+     })
+     e.stopPropagation();
+ })
+
+ let OffUserIcon = document.getElementById('userMenuBlock').addEventListener('mouseout', (e)=>{
+     let oUserMenu = document.getElementById('userMenu');
+     startMove(oUserMenu, {}, 10, function () {
+         startMoveWH(oUserMenu, {'height': 0, 'width': 0}, 10);
+     })
+     e.stopPropagation();
+ })

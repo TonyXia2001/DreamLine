@@ -61,7 +61,6 @@ document.getElementById('signupBtn').addEventListener('click', (e) => {
 })
 document.getElementById('btmSignupBtn').addEventListener('click', (e) => {
     e.stopPropagation();
-    e.stopPropagation();
     switchLiSuMethod("changeToSignUp", "changeToLogIn");
     var oBody = document.getElementById('wrapper');
     var oLiSu = document.getElementById('loginSignup');

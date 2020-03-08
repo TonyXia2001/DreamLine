@@ -30,7 +30,7 @@ function startMove(obj, json, v, fnEnd){
     }, v);
 }
 
-function startMoveWH(obj, json, v, dir, fnEnd){
+function startMoveWH(obj, json, v, fnEnd){
     clearInterval(obj.timer);
     obj.timer=setInterval(function () {
         var bStop = true;
@@ -42,7 +42,7 @@ function startMoveWH(obj, json, v, dir, fnEnd){
                 cur = Math.round(cur / document.documentElement.clientHeight * 100);
             }
             else if (attr == 'width')
-                cur = parseInt(cur / document.documentElement.clientWidth * 100);
+                cur = Math.round(cur / document.documentElement.clientWidth * 100);
             if (cur != json[attr])
                 bStop = false;
             var speed = (json[attr] - cur) / 6;

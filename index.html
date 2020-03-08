@@ -15,19 +15,21 @@
     <section id='loginSignup'>
         <button class = LiSuBtn id="changeToLogIn" onclick = 'switchLiSuMethod("changeToLogIn", "changeToSignUp")'>Log in</button>
         <button class = LiSuBtn id="changeToSignUp" onclick = 'switchLiSuMethod("changeToSignUp", "changeToLogIn")'>Sign Up</button>
-        <div class = LiSuIpDiv id = userNameDiv>
-            <p id = uNameP>Username: </p>
-            <input class = LiSuIp id = usernameIp type="text" placeholder="Username">
+        <div id="LiSuFlex">
+            <div class = LiSuIpDiv id = userNameDiv>
+                <p id = uNameP>Username: </p>
+                <input class = LiSuIp id = usernameIp type="text" placeholder="Username">
+            </div>
+            <div class = LiSuIpDiv id= passwordDiv>
+                <p id = pWordP>Password: </p>
+                <input class = LiSuIp id = passwordIp type="password" placeholder="Password">
+            </div>
+            <div class = LiSuIpDiv id = confirmDiv>
+                <p id = conPwordP>Confirm Password: </p>
+                <input class = LiSuIp id = confirmIp type="password" placeholder="Password">
+            </div>
+            <input type="submit" id=submitBtn>
         </div>
-        <div class = LiSuIpDiv id= passwordDiv>
-            <p id = pWordP>Password: </p>
-            <input class = LiSuIp id = passwordIp type="password" placeholder="Password">
-        </div>
-        <div class = LiSuIpDiv id = confirmDiv>
-            <p id = conPwordP>Confirm <br> Password: </p>
-            <input class = LiSuIp id = confirmIp type="password" placeholder="Password">
-        </div>
-        <input type="submit" id=submitBtn>
     </section>
     <article id=wrapper>
         <heading id=navBar>
@@ -108,7 +110,7 @@
                 <div>
                     The future belongs to those who believe in the beauty of their dreams. Make it reality with XXX.
                 </div>
-                <button id="btmSignupBtn" onmouseover = 'btnHover(this)' onmouseout = 'btnUnhover(this)'>
+                <button id="btmSignupBtn">
                     Sign Up Now
                 </button>
             </footer>
