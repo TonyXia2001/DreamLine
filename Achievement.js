@@ -25,9 +25,15 @@ function loadResult(results) {
         let onew = document.createElement('div');
         onew.innerHTML = results[i].title;
         onew.classList.add('achiContent');
-        onew.style.top = 30 + i * 25 + 'vh';
+        onew.style.top = 21 + i * 25 + 'vh';
         oLCol[0].appendChild(onew);
     }
+}
+
+let oAchiEle = document.getElementsByClassName('achiContent');
+for(let i = 0; i < oAchiEle.length; i++){
+    oAchiEle[i].addEventListener('click', function () {});
+    oAchiEle[i].style.top = 21 + i * 25 + 'vh';
 }
 
 document.getElementById('searchTerm').addEventListener('keyup', (e) => {

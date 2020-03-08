@@ -1,9 +1,8 @@
-﻿Have you ever made up your mind keeping a healthy diet but gave up your promise right away in fewer than three days? Have you ever downloaded Duolingo trying to learn a foreign language to show off among your friends but in the end never opening the app anyway?
+﻿DREAMLINE:
 
-While pomodoro could help you effectively achieve some short-term goals, there is no product on the market that focuses on people’s future decisions and the profound benefits of decisions that require long-term efforts. 
+Have you ever made up your mind keeping a healthy diet but gave up your promise right away in fewer than three days?  
 
-However, this is what us DreamLine would like to do. DreamLine is an web-platform that helps you find a way to your dreams and make them come true. First, with the help from a dynamic and interactive progress bar, users could get a clear sense of  
+While pomodoro could help you effectively achieve some short-term goals, there is no product on market that focuses on people’s future decisions and long-term benefits. 
 
-
-Utilizing Google Cloud Platform and MongoDB atalas, we were able to 
+DreamLine is an end-to-end web-platform that helps you make sure of your dreams and make them come true. 
 
