@@ -96,7 +96,8 @@ function changeBarDisplay(ratio){
 }
 // 1. extract all the bars from data base
 // 2. make new bars according to the statistics
-// -  With correct layout
+// 3. Make correct layout
+// 4. 
 
 function main(){
   fetch1();

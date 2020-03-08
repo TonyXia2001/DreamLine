@@ -111,6 +111,9 @@ body{
   background-color: rgba(55,55,120,0.7);
   text-align: center;
 }
+#plus-sign{
+  font-weight: bold;
+}
 
 /* five progresses */
 #one{
@@ -180,8 +183,8 @@ ul{
   display: inline-block;
   margin-top: 5vh;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   outline: none;
   filter: invert(70%) sepia(79%) saturate(421%) hue-rotate(59deg) brightness(108%) contrast(94%);
 }
@@ -210,12 +213,18 @@ ul{
 
 /* These are for the added items */
 .plus-bar-left{
+  /* position:absolute; */
+  padding-left: 5px;
+  left: 5vw;
   font-family: 'Asap', sans-serif;
-  margin-top: 3vh;
-  width : 50%;
+  margin-top: 7vh;
+  width : 65%;
   border: none;
-  border-bottom: 1px solid silver;
+  border-bottom: 1px solid black;
+  background: inherit;
   outline-width: 0;
+  color: white;
+  font-size: 20px;
 }
 
 .plus-bar-right{
@@ -230,26 +239,41 @@ ul{
 
 .plus-button-left{
   position: absolute;
-  margin-top: 3vh;
+  margin-top: 7vh;
   border-radius: 50%;
-  left: 1.5vw;
-  width: 10%;
+  left: 0.4vw;
+  width: 2.5vw;
+  height: 2.5vw;
   outline: none;
-  background-color: rgba(255, 0, 0, 1);
+  background-color: rgba(223, 122, 12, 1);
 }
 
 .plus-button-right{
+  font-weight: bold;
   position: absolute;
-  margin-top: 2vh;
   border-radius: 50%;
-  left: 8vw;
-  width: 3vw;
-  height: 3vw;
+  left: 13vw;
+  top: 138px;
+  width: 2.5vw;
+  height: 2.5vw;
   outline: none;
-  background: rgba(255, 0, 0, 1);
+  background: white;
+  border: 0.6px solid black;
+}
+.plus-button-right:hover{
+  opacity: 0.5;
 }
 
-/* bar-design */
-.empty-bar{
-
+.number-box{
+  position: absolute;
+  margin: auto auto;
+  font-weight: bold;
+  border-radius: 50%;
+  font-size: 15px;
+  left: 0.4vw;
+  width: 2vw;
+  height: 2vw;
+  outline: none;
+  border: 1px solid black;
+  background-color: rgba(223, 122, 12, 1);
 }
