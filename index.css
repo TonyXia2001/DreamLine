@@ -144,7 +144,6 @@ input, button {
     position: absolute;
     top: 100vh;
     left: 0;
-    text-align: center;
     font-size: 18pt;
     margin: 0;
     overflow-x: hidden;
@@ -153,15 +152,24 @@ input, button {
 }
 
 #introduction div{
-    width: 95%;
-    text-align: center;
-    margin: auto;
+    width: 40%;
+    text-align: left;
+    margin-left: 10vw;
     position: relative;
-    top: 20vh;
+    top: 30vh;
     z-index: 1;
     font-weight: bold;
     line-height: 50px;
     font-family: Verdana, Geneva, sans-serif;
+}
+#emphasis {
+    font-size: larger;
+}
+#diagram {
+    position: absolute;
+    top: 20vh;
+    right: 10vw;
+    border-radius: 20px;
 }
 
 #features{

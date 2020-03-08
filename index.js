@@ -111,8 +111,9 @@ document.addEventListener("click", (e)=>{
 document.getElementById('loginSignup').addEventListener('click', (e) => {
     e.stopPropagation();
 })
-// document.getElementById('searchInput').addEventListener('keydown', (e) => {
-    //     if (e.keyCode == 13) {
-        //         window.location.href = "./search.html";
-        //     }
-        // })
+document.getElementById('searchInput').addEventListener('keyup', (e) => {
+    if (e.keyCode == 13) {
+        window.location.href = "./search.html";
+        window.sessionStorage["query"] = document.getElementById('searchInput').value;
+    }
+})
