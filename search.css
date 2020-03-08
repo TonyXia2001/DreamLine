@@ -98,30 +98,6 @@ body{
   top: 0;
 }
 
-.progress{
-  margin: 0 auto;
-  margin-top: 10vh;
-  width: 65vw;
-  left: 60vw;
-  right: 0;
-  height: 10vh;
-  border-radius: 15px 15px 15px 15px;
-  height: 7vh;
-  border: 2px solid silver;
-}
-
-.bar-list{
-  margin-top: 5vh;
-  margin-left: 10vw;
-  left: 10vw;
-}
-
-#task-list{
-  position: absolute;
-  margin-top: 5vh;
-  height: 100%;
-  width: 100%;
-}
 .rightColumn{
   position: absolute;
   left:25vw;
@@ -132,7 +108,7 @@ body{
 
 .leftColumn{
   position:absolute;
-  top:11vh;
+  top: 11vh;
   width:20vw;
   height:89vh;
   border-right: 1px solid black;
