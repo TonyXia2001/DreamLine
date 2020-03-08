@@ -17,32 +17,29 @@ plus_item.addEventListener("click", plus_bar);
 function plus_bar(){
   if(maxone_left === false && bar_count <= max_bar){
     maxone_left = true;
-    let plus = document.createElement("input");
+    let plus = document.createElement("input"); // create an input box
     plus.innerHTML = "";
-    plus.id = "bar_"+ bar_count.toString();
+    plus.id = "bar_"+ bar_count.toString(); // give it a name by index starting from 0
     plus.type = "text";
     plus.classList.add("plus-bar-left");
     let button = document.createElement("button");
     button.innerHTML = "√";
     button.classList.add("plus-button-left");
     button.style.marginTop = `${left_height}px`;
-    left_height += 98;
+    left_height += 98; // make button the same height with the input line
     button.addEventListener("click", ()=>{
       document.getElementById(`bar_${bar_count}`);
       button.style.display = "none";
-      plus.readOnly = "true";
-      plus.classList.remove("plus-button-left");
-      plus.classList.add("tab","tab-button");
+      plus.readOnly = "true"; // when calling the button, make the text readOnly
+      plus.classList.remove("plus-button-left"); // remove the left button
+      plus.classList.add("tab","tab-button"); // add a tab for future selection
       maxone_left = false;
-      let t = {};
-      t.title = plus.value;
+      let t = {}; // task
+      t.title = plus.value; // set title to the text of plus(taskName)
       progressBars.push(t);
       plus.addEventListener("click",()=>{
-        console.log(plus.id);
         let num = parseInt(plus.id[plus.id.length-1]);
-        console.log(num);
         currentBar = num;
-        console.log(currentBar);
         render();
         bar_count += 1;
       })
@@ -59,7 +56,6 @@ function plus_bar(){
     })
     bar_count++;
   }
-  // if press, set maxone_left to true
 }
 
 add_task.addEventListener("click", plus_task);
@@ -129,4 +125,11 @@ function render(){
          startMoveWH(oUserMenu, {'height': 0, 'width': 0}, 10);
      })
      e.stopPropagation();
+ })
+
+ document.getElementById('searchText').addEventListener('keyup', (e) => {
+     if (e.keyCode == 13) {
+         window.sessionStorage["query"] = document.getElementById('searchText').value;
+         window.location.href = "./search.html";
+     }
  })

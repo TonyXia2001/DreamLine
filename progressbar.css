@@ -17,6 +17,7 @@ body{
   display: flex;
   left: 75vw;
 }
+
 .searchTerm {
   width: 30%;
   border: 3px solid inherit;
@@ -39,6 +40,9 @@ body{
   cursor: pointer;
   font-size: 20px;
 }
+.searchButton:hover{
+  opacity: 0.8;
+}
 .body{
   margin: 0;
 }
@@ -59,6 +63,7 @@ body{
 }
 #user-icon:hover{
   position: absolute;
+  opacity: 0.9;
   cursor:pointer;
 }
 
